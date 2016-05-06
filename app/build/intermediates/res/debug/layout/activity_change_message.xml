@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brey_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_color">
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="消息提醒"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/five_dip"
+        android:layout_marginLeft="@dimen/ten_dip"
+        android:layout_marginTop="@dimen/fifteen_dip"
+        android:text="消息"
+        android:textSize="@dimen/login_button_size" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:text="退出后仍然接受到消息推送"
+            android:textSize="@dimen/content_size" />
+
+        <com.cn7782.management.view.ToggleButton
+            android:id="@+id/msg_toggle_back"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+    <!--
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:text="通知栏显示消息"
+            android:textSize="@dimen/content_size" />
+
+        <com.cn7782.management.view.ToggleButton
+            android:id="@+id/msg_toggle_notify"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+        -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:text="提示声"
+            android:textSize="@dimen/content_size" />
+
+        <com.cn7782.management.view.ToggleButton
+            android:id="@+id/msg_toggle_sound"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:text="震动"
+            android:textSize="@dimen/content_size" />
+
+        <com.cn7782.management.view.ToggleButton
+            android:id="@+id/msg_toggle_vibrator"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+</LinearLayout><!-- From: file:/E:/carpool/projects/Grid_Management_as/app/src/main/res/layout/activity_change_message.xml -->

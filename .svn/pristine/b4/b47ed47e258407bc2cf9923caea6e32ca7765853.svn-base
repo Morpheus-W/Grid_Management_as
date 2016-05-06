@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.3-2a9757493c02397e5403e4adcf25e5161d216971.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\picasso-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\picasso-2.4.0-7f528af6b0ca547616a0d6540e7e7284c199ea8b.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-4aef423ffaeee7d64ae60a969b6bdc98fa6203b6.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-3a083793a2374986403d37a1646b0e69598784c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\gson-2.2.4-752a4694a6e7953de1b9e1ac68ee96a302f761f3.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\nineoldandroids-2.4.0-2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0-2-8f3ec7b8172411639fde7679a39d45e7c20520f3.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\togglebuttonlib.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="199d62cbe8defdfaa94469e5f95b7d0fbe5697ac">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\togglebuttonlib-0b12ce257b4472e7de3cc6e076de4af09ee520a8.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\slidingmenu.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="942c0d8b6512d787707afbe8293566c413cdb86a">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\slidingmenu-4bd44908a23943d92e8010dee6e75a624d1f0fae.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\org.apache.http.legacy.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\org.apache.http.legacy-c8d7784b2a5ba9e36ba204cb0b7e494d91ab2422.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcd5c6fbeb4f0f9ebc900185e202d04d7f64094b">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-640382b4a01e7294abfa7e6ba653b327894272e6.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8b8a0920c1dde956352c07a2006301e946dc8831">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android-2318a012ed8c7bf520db4d7001b17d579be5c8aa.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\universal-image-loader-1.9.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="296dfb44fbf31397c0306e60cb62e06ca40df07f">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.1-6a258d6e8fab071343ab46a77d8527d082716bca.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\libs\umeng_sdk.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="951bead45677ae72cc8611eb93b5eb286f8e986e">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\umeng_sdk-e7e1d92499cf5bf4d35b8e8d8562c3c621800911.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\easemobchat_2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="272e12284f694ce18895e715ca593cba0bca8bfc">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\easemobchat_2.2.3-05e116233b86f1a596b47d2f12ded46773b111f5.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-6c2534c74d45ae216d79dca57f87b681de54fda2.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-251bb9354d33683c1084c90eeb1dc88adbe754e4.jar" />
+    </item>
+    <item
+        jar="E:\Android\as\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-187fc07d6e8ce77b7adbb4ab2ab530bef9b232bb.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\google-play-services.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f0d8e4a84fad131bc291c3c4850afcaa8ba0b299">
+        <dex dex="E:\SmartCity\client\Grid_Management_as\app\build\intermediates\pre-dexed\debug\google-play-services-8543808eefb3f17cb5cb09b6a834f0695ccb7592.jar" />
+    </item>
+
+</items>

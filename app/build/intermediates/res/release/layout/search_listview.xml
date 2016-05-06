@@ -1,0 +1,167 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fifteen_dip"
+        android:layout_marginLeft="@dimen/ten_dip"
+        android:layout_marginRight="@dimen/ten_dip"
+        android:layout_marginTop="@dimen/fifteen_dip"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/notice_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/five_dip"
+                    android:text="2014年湖南宜章法政报告"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/content_title"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:id="@+id/notice_department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginLeft="@dimen/five_dip"
+                    android:layout_marginTop="2dip"
+                    android:text="李元华-行政部"
+                    android:textColor="@color/mark_text"
+                    android:textSize="@dimen/mark_size" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/isTop_iv"
+                android:visibility="gone"
+                android:layout_weight="6"
+                android:src="@drawable/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/notice_image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/notice_image"
+                    android:layout_width="80dip"
+                    android:layout_height="65dip"
+                    android:layout_margin="@dimen/five_dip"
+                    android:src="@drawable/head_img_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/five_dip"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dip"
+                    android:layout_weight="3">
+
+                    <TextView
+                        android:id="@+id/notice_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/five_dip"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="3dp"
+                        android:lineSpacingMultiplier="1.2"
+                        android:maxLines="3"
+                        android:text="    abstract修饰类，会使这个类成为一个抽象类，这个类将不能生成对象实例，也就是只有声明（定义）而没有实现.这一段测试文字"
+                        android:textColor="@color/content_text"
+                        android:textSize="@dimen/content_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five_dip"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/notice_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/time"
+                            android:gravity="left|center"
+                            android:text="2015-01-26"
+                            android:textColor="@color/mark_text"
+                            android:textSize="@dimen/mark_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="right|center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/notice_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/fifteen_dip"
+                            android:drawableLeft="@drawable/comment"
+                            android:gravity="center"
+                            android:text="161"
+                            android:textColor="@color/mark_text"
+                            android:textSize="@dimen/mark_size" />
+
+                        <TextView
+                            android:id="@+id/notice_look"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/five_dip"
+                            android:drawableLeft="@drawable/look"
+                            android:gravity="center"
+                            android:text="234"
+                            android:textColor="@color/mark_text"
+                            android:textSize="@dimen/mark_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/search_listview.xml -->

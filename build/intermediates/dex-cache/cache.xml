@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\google-play-services.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f0d8e4a84fad131bc291c3c4850afcaa8ba0b299">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\google-play-services-f759748bd9f5ff056b6d2b863bc13622762358a0.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\universal-image-loader-1.9.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="296dfb44fbf31397c0306e60cb62e06ca40df07f">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.1-68e158b14eaaed029758f71482c3cd968ff9f057.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.3-04383daddd22af830b80a18e71fbafeba77efe23.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\org.apache.http.legacy.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\org.apache.http.legacy-db57c798cde8e6126b0a46b62ce4188cf21d475c.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\umeng-analytics-v5.6.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b2705cbb19f52bb4d242458163a98d9e889c1292">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\umeng-analytics-v5.6.1-19bf87470cb390b5f774e4eab33d38c76370f8ca.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\slidingmenu.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="942c0d8b6512d787707afbe8293566c413cdb86a">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\slidingmenu-53bd1540701ad59fb9e9836be180bfe34926a1af.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-5ced0bea10d9e1efb70ae8cf05585feac79637a9.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d4c936aa8c7d2522c82e3f1829c791d9e367f009">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-4d487a0b91d4e531033353d7c20cf43d75d20a49.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\togglebuttonlib.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="199d62cbe8defdfaa94469e5f95b7d0fbe5697ac">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\togglebuttonlib-829ff061ac80a3f21288bb88c7547ee06646f3a8.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.0-51b30436b2eb8973a2361152524f98510757b94a.jar" />
+    </item>
+    <item
+        jar="E:\android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0-fda33da51ce8bbaac01af4b31063a18c327ab097.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9346de00f4783e3d7517aef4ed673795d8346033">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-6c5b200dfd286d7a2b14107ba44d9119db520506.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\jpush-android-2.0.5.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f2c821a0d13219a2e70490085c390bab03fb5953">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\jpush-android-2.0.5-5fdd0f19722f3c3d16d2ab3faf4927a0b7d3f8be.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8b8a0920c1dde956352c07a2006301e946dc8831">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android-273acd50b29b74191cfa91af092218ffdae3a7ba.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-59c9966f3be33c4be28fbdabb4375ba355aeca75.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-bfaa76eb112c66699d2b702c18879008c080bdc6.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\libs\nineoldandroids-2.4.0-2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0-2-ebcf6d208c5004bd48e4c59fdf55d864e26a9026.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\easemobchat_2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="272e12284f694ce18895e715ca593cba0bca8bfc">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\easemobchat_2.2.3-5a8d9ded3cc509913c78ab1406531edcc3a50ed3.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\Grid_Management_as\easeUI\unspecified\jars\libs\picasso-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\picasso-2.4.0-4a93f8c173fa9b73fbf51b747ddd7e44a00dc982.jar" />
+    </item>
+    <item
+        jar="E:\carpool\projects\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-c4eb9e3bb068f13105d9007b00fb8f09b70c542a.jar" />
+    </item>
+    <item
+        jar="C:\Users\tangweny\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\carpool\projects\Grid_Management_as\app\build\intermediates\pre-dexed\debug\gson-2.2.4-b8eba9245d3d0f2ae1e44e2dc270b84f783c65df.jar" />
+    </item>
+
+</items>

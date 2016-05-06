@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_dip"
+        
+        android:gravity="top|center" >
+
+        <ImageView
+            android:id="@+id/comment_image"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:src="@drawable/default_header" >
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ten_dip"
+        android:layout_marginRight="@dimen/fifteen_dip"
+        android:layout_marginBottom="@dimen/ten_dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+             android:gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/comment_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="8dip"
+                android:gravity="bottom"
+                android:text="Masiro"
+                android:textColor="@color/content_title"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/comment_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/five_dip"
+                android:layout_marginTop="@dimen/ten_dip"
+                android:layout_toRightOf="@+id/comment_name"
+                android:gravity="bottom"
+                android:text="后勤部"
+                android:textColor="@color/mark_text"
+                android:textSize="@dimen/mark_size" />
+
+            <TextView
+                android:id="@+id/comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/five_dip"
+                android:layout_marginTop="@dimen/ten_dip"
+                android:gravity="center"
+                android:text="01/16"
+                android:textColor="@color/mark_text"
+                android:textSize="@dimen/mark_size" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/comment_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/five_dip"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text=" "
+            android:textColor="@color/content_text"
+            android:textSize="@dimen/content_size" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/comment_listview.xml -->

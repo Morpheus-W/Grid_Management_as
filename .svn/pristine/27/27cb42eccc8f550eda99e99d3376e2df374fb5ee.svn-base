@@ -1,0 +1,281 @@
+# view res/layout/activity_calendarmanager.xml #generated:166
+# view res/layout/activity_choose_address.xml #generated:87
+# view res/layout/activity_main_tab.xml #generated:6
+# view res/layout/activity_my_report.xml #generated:104
+# view res/layout/fragment_image_preview_fragemnt.xml #generated:8
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:130
+-keep class android.support.v4.widget.Space { <init>(...); }
+
+# view res/layout/abc_action_menu_item_layout.xml #generated:17
+-keep class android.support.v7.internal.view.menu.ActionMenuItemView { <init>(...); }
+
+# view res/layout/abc_expanded_menu_layout.xml #generated:17
+-keep class android.support.v7.internal.view.menu.ExpandedMenuView { <init>(...); }
+
+# view res/layout/abc_list_menu_item_layout.xml #generated:17
+# view res/layout/abc_popup_menu_item_layout.xml #generated:17
+-keep class android.support.v7.internal.view.menu.ListMenuItemView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:27
+-keep class android.support.v7.internal.widget.ActionBarContainer { <init>(...); }
+
+# view res/layout/abc_action_mode_bar.xml #generated:19
+# view res/layout/abc_screen_toolbar.xml #generated:43
+-keep class android.support.v7.internal.widget.ActionBarContextView { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:17
+-keep class android.support.v7.internal.widget.ActionBarOverlayLayout { <init>(...); }
+
+# view res/layout/abc_activity_chooser_view.xml #generated:19
+-keep class android.support.v7.internal.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# view res/layout/abc_screen_content_include.xml #generated:19
+-keep class android.support.v7.internal.widget.ContentFrameLayout { <init>(...); }
+
+# view res/layout/abc_alert_dialog_material.xml #generated:48
+-keep class android.support.v7.internal.widget.DialogTitle { <init>(...); }
+
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:23
+-keep class android.support.v7.internal.widget.FitWindowsFrameLayout { <init>(...); }
+
+# view res/layout/abc_dialog_title_material.xml #generated:22
+# view res/layout/abc_screen_simple.xml #generated:17
+-keep class android.support.v7.internal.widget.FitWindowsLinearLayout { <init>(...); }
+
+# view res/layout/abc_action_mode_close_item_material.xml #generated:17
+# view res/layout/abc_search_dropdown_item_icons_2line.xml #generated:27
+# view res/layout/abc_search_dropdown_item_icons_2line.xml #generated:37
+# view res/layout/abc_search_dropdown_item_icons_2line.xml #generated:48
+# view res/layout/abc_search_view.xml #generated:116
+# view res/layout/abc_search_view.xml #generated:128
+# view res/layout/abc_search_view.xml #generated:38
+# view res/layout/abc_search_view.xml #generated:60
+# view res/layout/abc_search_view.xml #generated:97
+-keep class android.support.v7.internal.widget.TintImageView { <init>(...); }
+
+# view res/layout/abc_screen_simple.xml #generated:25
+# view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
+-keep class android.support.v7.internal.widget.ViewStubCompat { <init>(...); }
+
+# view res/layout/abc_action_menu_layout.xml #generated:17
+-keep class android.support.v7.widget.ActionMenuView { <init>(...); }
+
+# view res/layout/fragment_photogallery_layout.xml #generated:7
+-keep class android.support.v7.widget.RecyclerView { <init>(...); }
+
+# view res/layout/abc_search_view.xml #generated:78
+-keep class android.support.v7.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# view res/layout/abc_screen_toolbar.xml #generated:36
+-keep class android.support.v7.widget.Toolbar { <init>(...); }
+
+# view AndroidManifest.xml #generated:267
+-keep class com.baidu.location.f { <init>(...); }
+
+# view res/layout/activity_checkmap.xml #generated:44
+# view res/layout/activity_choose_address.xml #generated:34
+# view res/layout/activity_map.xml #generated:33
+# view res/layout/activity_patroling2.xml #generated:42
+# view res/layout/activity_trajectory.xml #generated:34
+-keep class com.baidu.mapapi.map.MapView { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.cn7782.management.android.BaseApplication { <init>(...); }
+
+# view AndroidManifest.xml #generated:168
+-keep class com.cn7782.management.android.activity.AddPatrolActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:228
+-keep class com.cn7782.management.android.activity.AddScheduleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:192
+-keep class com.cn7782.management.android.activity.ChangeInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:188
+-keep class com.cn7782.management.android.activity.ChangeMessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:151
+-keep class com.cn7782.management.android.activity.ChartingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:172
+-keep class com.cn7782.management.android.activity.CheckMapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:204
+-keep class com.cn7782.management.android.activity.ChooseAddressActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:113
+-keep class com.cn7782.management.android.activity.ChooseDateActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:242
+-keep class com.cn7782.management.android.activity.ContactManagerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:200
+-keep class com.cn7782.management.android.activity.DescriptionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:125
+-keep class com.cn7782.management.android.activity.DynamicActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:212
+-keep class com.cn7782.management.android.activity.DynamicDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.cn7782.management.android.activity.EventReportActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:247
+-keep class com.cn7782.management.android.activity.FallDownWarnActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:216
+-keep class com.cn7782.management.android.activity.FeedbackActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:147
+-keep class com.cn7782.management.android.activity.HaveReadActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:224
+-keep class com.cn7782.management.android.activity.HistoryListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:86
+-keep class com.cn7782.management.android.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:133
+-keep class com.cn7782.management.android.activity.LoginSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.cn7782.management.android.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:117
+-keep class com.cn7782.management.android.activity.MapAcitivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:103
+-keep class com.cn7782.management.android.activity.MediaChoseActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:129
+-keep class com.cn7782.management.android.activity.MessageActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:142
+-keep class com.cn7782.management.android.activity.MessageDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:288
+-keep class com.cn7782.management.android.activity.MsgNotificationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:184
+-keep class com.cn7782.management.android.activity.MyInformationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.cn7782.management.android.activity.MyReportActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:164
+-keep class com.cn7782.management.android.activity.MyReportDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:121
+-keep class com.cn7782.management.android.activity.NoticeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:137
+-keep class com.cn7782.management.android.activity.NoticeDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:98
+-keep class com.cn7782.management.android.activity.PatrolActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:176
+-keep class com.cn7782.management.android.activity.PatrolingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:252
+-keep class com.cn7782.management.android.activity.ScheduleDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class com.cn7782.management.android.activity.ScheduleManagerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:256
+-keep class com.cn7782.management.android.activity.SelectNoticeTypeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:155
+-keep class com.cn7782.management.android.activity.SelectTypeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:196
+-keep class com.cn7782.management.android.activity.SendNoticeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:94
+-keep class com.cn7782.management.android.activity.StatisticsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:180
+-keep class com.cn7782.management.android.activity.TrajectoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:208
+-keep class com.cn7782.management.android.activity.TrajectoryListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:232
+-keep class com.cn7782.management.android.activity.UpdateScheduleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:220
+-keep class com.cn7782.management.android.activity.UploadedOfflineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:73
+-keep class com.cn7782.management.android.activity.WelcomeActivity { <init>(...); }
+
+# view res/layout/charting_listview.xml #generated:14
+-keep class com.cn7782.management.android.activity.charting.PieChart { <init>(...); }
+
+# view res/layout/date_picker_view_animator.xml #generated:16
+-keep class com.cn7782.management.android.activity.datetimepickers.AccessibleDateAnimator { <init>(...); }
+
+# view res/layout/date_picker_selected_date.xml #generated:27
+-keep class com.cn7782.management.android.activity.datetimepickers.AccessibleLinearLayout { <init>(...); }
+
+# view res/layout/date_picker_selected_date.xml #generated:60
+# view res/layout/time_header_label.xml #generated:100
+# view res/layout/time_header_label.xml #generated:51
+# view res/layout/time_header_label.xml #generated:91
+-keep class com.cn7782.management.android.activity.datetimepickers.AccessibleTextView { <init>(...); }
+
+# view res/layout/time_picker_dialog.xml #generated:34
+-keep class com.cn7782.management.android.activity.datetimepickers.RadialPickerLayout { <init>(...); }
+
+# view res/layout/year_label_text_view.xml #generated:16
+-keep class com.cn7782.management.android.activity.datetimepickers.TextViewWithCircularIndicator { <init>(...); }
+
+# view AndroidManifest.xml #generated:272
+-keep class com.cn7782.management.android.activity.receiver.AudioReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:277
+-keep class com.cn7782.management.android.activity.receiver.MsgReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:266
+-keep class com.cn7782.management.android.activity.service.CoreService { <init>(...); }
+
+# view AndroidManifest.xml #generated:265
+-keep class com.cn7782.management.android.activity.service.MessengerService { <init>(...); }
+
+# view AndroidManifest.xml #generated:262
+-keep class com.cn7782.management.android.activity.service.PositioningService { <init>(...); }
+
+# view AndroidManifest.xml #generated:264
+-keep class com.cn7782.management.android.activity.service.TimingService { <init>(...); }
+
+# view res/layout/activity_myreport_detail.xml #generated:152
+# view res/layout/activity_noticedetail.xml #generated:181
+# view res/layout/activity_noticedetail.xml #generated:225
+-keep class com.cn7782.management.android.activity.tabview.ChangeListView { <init>(...); }
+
+# view res/layout/activity_calendarmanager.xml #generated:246
+# view res/layout/activity_calendarmanager.xml #generated:254
+# view res/layout/activity_schedule_detail.xml #generated:189
+# view res/layout/activity_schedule_detail.xml #generated:196
+-keep class com.cn7782.management.android.activity.tabview.CircleTextView { <init>(...); }
+
+# view res/layout/activity_my_report.xml #generated:47
+-keep class com.cn7782.management.android.activity.tabview.SyncHorizontalScrollView { <init>(...); }
+
+# view res/layout/activity_dynamic.xml #generated:34
+# view res/layout/activity_message.xml #generated:34
+# view res/layout/search_fragment.xml #generated:45
+-keep class com.cn7782.management.view.PullToRefreshView { <init>(...); }
+
+# view res/layout/activity_change_message.xml #generated:124
+# view res/layout/activity_change_message.xml #generated:153
+# view res/layout/activity_change_message.xml #generated:64
+# view res/layout/activity_send_notice.xml #generated:220
+# view res/layout/fragment_more.xml #generated:310
+# view res/layout/fragment_more.xml #generated:346
+-keep class com.cn7782.management.view.ToggleButton { <init>(...); }
+

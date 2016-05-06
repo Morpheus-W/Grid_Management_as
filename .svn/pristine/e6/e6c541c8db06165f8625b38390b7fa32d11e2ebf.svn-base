@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="@android:color/transparent"></solid>
+    <corners android:radius="25dip"></corners>
+    <stroke android:width="1px" android:color="#80ffffff"></stroke>
+
+</shape>
+<!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/drawable/select_view_bg.xml -->

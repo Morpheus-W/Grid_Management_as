@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_color" >
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="公告"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/ten_dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/add_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginTop="@dimen/five_dip" >
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="@dimen/thirty_dip_dip"
+                android:layout_height="@dimen/thirty_dip_dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/ten_dip"
+                android:src="@drawable/notice" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/five_dip"
+                android:layout_marginLeft="@dimen/ten_dip"
+                android:layout_marginTop="@dimen/five_dip"
+                android:layout_toRightOf="@+id/image2"
+                android:background="@null"
+                android:hint="选择公告类型"
+                android:textSize="@dimen/title_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/fifteen_dip"
+                android:src="@drawable/right" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginBottom="@dimen/ten_dip"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@id/notice_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten_dip"
+            android:background="@null"
+            android:hint="请输入标题"
+            android:textColor="@color/ampm_text_color"
+            android:textSize="@dimen/title_size" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="@dimen/ten_dip"
+        android:layout_weight="1"
+        android:background="@drawable/submit"
+        android:gravity="top|left" >
+
+        <EditText
+            android:id="@+id/notice_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/five_dip"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="输入你的评论"
+            android:maxLines="10"
+            android:textSize="@dimen/title_size" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/twenty_five_dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="left|center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:orientation="horizontal" >
+
+            <HorizontalScrollView
+                android:id="@+id/attachment_horizontalscroll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten_dip"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:id="@+id/attachment_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten_dip"
+            android:src="@drawable/photo" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/twenty_five_dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/fifteen_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/fifteen_dip"
+            android:text="是否置顶"
+            android:textColor="@color/ampm_text_color"
+            android:textSize="@dimen/title_size" />
+
+        <com.cn7782.management.view.ToggleButton
+            android:id="@+id/notice_button"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/fifteen_dip" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/login_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/twenty_dip"
+            android:layout_marginLeft="@dimen/twenty_dip"
+            android:layout_marginRight="@dimen/twenty_dip"
+            android:layout_marginTop="@dimen/twenty_dip"
+            android:background="@drawable/btn_login"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ten_dip"
+                android:layout_marginTop="@dimen/ten_dip"
+                android:text="提交公告"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_button_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/activity_send_notice.xml -->

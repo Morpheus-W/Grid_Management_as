@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_color" >
+
+        <TextView
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/kcool_title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableRight="@drawable/pull_down"
+            android:gravity="center"
+            android:text="行政公告"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/add_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/five_dip"
+            android:background="@drawable/btn_add"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <com.cn7782.management.view.PullToRefreshView
+        android:id="@+id/pull_refresh_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/search_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </com.cn7782.management.view.PullToRefreshView>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/search_fragment.xml -->

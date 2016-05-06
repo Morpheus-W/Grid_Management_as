@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="@color/title_color" >
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/walk"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/my_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/five_dip"
+            android:background="@drawable/btn_meun"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/twenty_five_dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/five_dip"
+            android:background="@color/white"
+            android:src="@drawable/patrol_time" />
+
+        <TextView
+            android:id="@+id/patrol_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/five_dip"
+            android:layout_toRightOf="@+id/image"
+            android:textSize="@dimen/content_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/five_dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/choose_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/five_dip"
+            android:background="@color/white"
+            android:src="@drawable/patrol_position" />
+        <!-- android:hint="稍等" -->
+
+        <TextView
+            android:id="@+id/patrol_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/five_dip"
+            android:layout_toRightOf="@+id/image2"
+            android:text=" "
+            android:textSize="@dimen/content_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/five_dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/add_history"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/five_dip"
+            android:background="@color/white"
+            android:src="@drawable/patrol_content" />
+
+        <TextView
+            android:id="@+id/patrol_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/five_dip"
+            android:layout_toRightOf="@+id/image1"
+            android:background="@null"
+            android:hint="@string/event_type"
+            android:textSize="@dimen/content_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="@dimen/five_dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:background="@drawable/btn_login"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <corners android:topRightRadius="14dip" android:bottomRightRadius="14dip"></corners>
+    <solid android:color="#40ffffff"></solid>
+</shape>
+<!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/drawable/press_right_text_bg.xml -->

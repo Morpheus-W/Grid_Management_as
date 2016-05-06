@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/iv_expression"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:scaleType="centerInside">
+
+</ImageView>
+<!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/src/main/res/layout/ease_row_expression.xml --><!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/build/intermediates/bundles/debug/res/layout/ease_row_expression.xml -->

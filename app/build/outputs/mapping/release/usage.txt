@@ -1,0 +1,1337 @@
+com.android.internal.http.multipart.ByteArrayPartSource
+com.android.internal.http.multipart.FilePart:
+    protected static final java.lang.String FILE_NAME
+    11:11:protected void sendDispositionHeader(java.io.OutputStream)
+    12:12:protected void sendData(java.io.OutputStream)
+    13:13:protected com.android.internal.http.multipart.PartSource getSource()
+    14:14:protected long lengthOfData()
+com.android.internal.http.multipart.FilePartSource
+com.android.internal.http.multipart.MultipartEntity:
+    7:7:protected byte[] getMultipartBoundary()
+com.android.internal.http.multipart.Part:
+    protected static final java.lang.String BOUNDARY
+    protected static final java.lang.String CHARSET
+    protected static final java.lang.String CONTENT_DISPOSITION
+    protected static final java.lang.String CONTENT_TRANSFER_ENCODING
+    protected static final java.lang.String CONTENT_TYPE
+    protected static final java.lang.String CRLF
+    protected static final java.lang.String EXTRA
+    protected static final java.lang.String QUOTE
+    11:11:protected byte[] getPartBoundary()
+    13:13:protected void sendStart(java.io.OutputStream)
+    14:14:protected void sendDispositionHeader(java.io.OutputStream)
+    15:15:protected void sendContentTypeHeader(java.io.OutputStream)
+    16:16:protected void sendTransferEncodingHeader(java.io.OutputStream)
+    17:17:protected void sendEndOfHeader(java.io.OutputStream)
+    protected abstract void sendData(java.io.OutputStream)
+    protected abstract long lengthOfData()
+    20:20:protected void sendEnd(java.io.OutputStream)
+com.android.internal.http.multipart.PartSource:
+    public abstract long getLength()
+    public abstract java.lang.String getFileName()
+    public abstract java.io.InputStream createInputStream()
+com.android.internal.http.multipart.StringPart:
+    7:7:protected void sendData(java.io.OutputStream)
+    8:8:protected long lengthOfData()
+com.cn7782.management.Manifest:
+    10:11:public Manifest()
+com.cn7782.management.R:
+    10:4083:public R()
+com.cn7782.management.android.DemoHelper:
+    protected static final java.lang.String TAG
+    private java.lang.String username
+    private com.easemob.EMConnectionListener connectionListener
+    private android.support.v4.content.LocalBroadcastManager broadcastManager
+    private boolean isGroupAndContactListenerRegisted
+    110:128:protected void setGlobalListeners()
+    134:138:protected void onConnectionConflict()
+    144:148:protected void onCurrentAccountRemoved()
+    184:262:protected void registerEventListener()
+    270:270:public boolean isLoggedIn()
+    282:307:public void logout(boolean,com.easemob.EMCallBack)
+    314:314:public com.easemob.easeui.model.EaseNotifier getNotifier()
+    319:321:synchronized void reset()
+    34:34:static synthetic com.easemob.easeui.controller.EaseUI access$100(com.cn7782.management.android.DemoHelper)
+    34:34:static synthetic android.content.Context access$200(com.cn7782.management.android.DemoHelper)
+com.cn7782.management.android.DemoHelper$2
+com.cn7782.management.android.DemoHelper$3
+com.cn7782.management.android.DemoHelper$3$1
+com.cn7782.management.android.DemoHelper$4
+com.cn7782.management.android.DemoHelper$5
+com.cn7782.management.android.activity.ContactManagerActivity:
+    146:178:private void queryEmployeeList(java.lang.Integer)
+com.cn7782.management.android.activity.DynamicDetailActivity:
+    133:165:private void getReadData()
+com.cn7782.management.android.activity.DynamicDetailActivity$3
+com.cn7782.management.android.activity.EventReportActivity:
+    private android.widget.LinearLayout mAddPhotoLayout
+    private java.lang.String PhotoPath
+    private static final int POLL_INTERVAL
+    private static final int TAKE_PICTURE
+com.cn7782.management.android.activity.EventReportActivity$GridAdapter:
+    private boolean shape
+    807:807:public boolean isShape()
+    811:812:public void setShape(boolean)
+    835:836:public void setSelectedPosition(int)
+    839:839:public int getSelectedPosition()
+com.cn7782.management.android.activity.EventReportActivity2:
+    private android.widget.LinearLayout mAddPhotoLayout
+    private java.lang.String PhotoPath
+    private static final int POLL_INTERVAL
+    private static final int TAKE_PICTURE
+com.cn7782.management.android.activity.EventReportActivity2$GridAdapter:
+    private boolean shape
+    834:834:public boolean isShape()
+    838:839:public void setShape(boolean)
+    862:863:public void setSelectedPosition(int)
+    866:866:public int getSelectedPosition()
+com.cn7782.management.android.activity.FallDownWarnActivity:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.ImageGridActivity:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.MainActivity:
+    private static final java.lang.String TAG
+    456:459:private void setUpBaseView(java.lang.String)
+com.cn7782.management.android.activity.MyReportDetailActivity:
+    249:265:private boolean Getsuffix(java.lang.String)
+com.cn7782.management.android.activity.RecorderVideoActivity:
+    private static final java.lang.String TAG
+    private static final java.lang.String CLASS_LABEL
+    544:555:public void saveBitmapFile(android.graphics.Bitmap)
+com.cn7782.management.android.activity.ScheduleDetailActivity:
+    private android.view.View noticeView
+    private com.cn7782.management.android.db.DBHelper dp
+com.cn7782.management.android.activity.TakeVideoActivity$OnShootCompletionListener
+com.cn7782.management.android.activity.TrajectoryActivity:
+    private com.baidu.mapapi.map.Marker mMarkerA
+    private java.util.List mlist
+    private android.widget.Spinner titlemenu
+    private com.cn7782.management.android.activity.adapter.SpinnerItem spinnerItem
+com.cn7782.management.android.activity.adapter.ChartingAdapter:
+    333:343:private java.util.ArrayList Transformation()
+com.cn7782.management.android.activity.adapter.ChartingAdapter$Bean:
+    final synthetic com.cn7782.management.android.activity.adapter.ChartingAdapter this$0
+    346:346:ChartingAdapter$Bean(com.cn7782.management.android.activity.adapter.ChartingAdapter)
+com.cn7782.management.android.activity.adapter.ChartinglistAdapter
+com.cn7782.management.android.activity.adapter.ChartinglistAdapter$ViewHolder
+com.cn7782.management.android.activity.adapter.DataAdapter
+com.cn7782.management.android.activity.adapter.DataAdapter$ViewHolder
+com.cn7782.management.android.activity.adapter.FileListAdapter:
+    76:78:public java.lang.String changeKb(java.lang.String)
+    84:98:private java.lang.String ChangeSize(java.lang.String)
+com.cn7782.management.android.activity.adapter.PatrolHisAdapter$ViewHolder:
+    android.widget.TextView startPoint
+    android.widget.TextView endPoint
+    android.widget.ImageView message_image
+com.cn7782.management.android.activity.adapter.ScheduleAdapter:
+    44:45:public void setdata(java.util.List)
+com.cn7782.management.android.activity.adapter.SpinnerItem
+com.cn7782.management.android.activity.adapter.SpinnerItem$ViewHolder
+com.cn7782.management.android.activity.adapter.WorkingAdapter:
+    147:158:private int getcolor(java.lang.String)
+com.cn7782.management.android.activity.bean.CustomDate:
+    private static final long serialVersionUID
+com.cn7782.management.android.activity.bean.DepartmentBean:
+    private static final long serialVersionUID
+    40:40:public java.lang.Integer getParentId()
+    43:44:public void setParentId(java.lang.Integer)
+com.cn7782.management.android.activity.bean.EmployeeBean:
+    private static final long serialVersionUID
+    29:42:public EmployeeBean(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+com.cn7782.management.android.activity.bean.HistoryBean:
+    private java.lang.String start
+    private java.lang.String end
+    55:55:public java.lang.String getStart()
+    59:60:public void setStart(java.lang.String)
+    63:63:public java.lang.String getEnd()
+    67:68:public void setEnd(java.lang.String)
+com.cn7782.management.android.activity.bean.InviteMessage:
+    private java.lang.String from
+    private long time
+    private java.lang.String reason
+    private com.cn7782.management.android.activity.bean.InviteMessage$InviteMesageStatus status
+    private java.lang.String groupId
+    private java.lang.String groupName
+    private int id
+    16:94:public InviteMessage()
+    34:34:public java.lang.String getFrom()
+    38:39:public void setFrom(java.lang.String)
+    42:42:public long getTime()
+    46:47:public void setTime(long)
+    51:51:public java.lang.String getReason()
+    55:56:public void setReason(java.lang.String)
+    59:59:public com.cn7782.management.android.activity.bean.InviteMessage$InviteMesageStatus getStatus()
+    63:64:public void setStatus(com.cn7782.management.android.activity.bean.InviteMessage$InviteMesageStatus)
+    69:69:public int getId()
+    73:74:public void setId(int)
+    77:77:public java.lang.String getGroupId()
+    81:82:public void setGroupId(java.lang.String)
+    85:85:public java.lang.String getGroupName()
+    89:90:public void setGroupName(java.lang.String)
+com.cn7782.management.android.activity.bean.MyReportBean:
+    private java.lang.String progress
+    62:62:public java.lang.String getProgress()
+    66:67:public void setProgress(java.lang.String)
+com.cn7782.management.android.activity.bean.ScheduleBean:
+    private static final long serialVersionUID
+    private java.lang.String schdate
+    private java.lang.String noticetime
+    28:36:public ScheduleBean(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    50:50:public java.lang.String getSchdate()
+    53:54:public void setSchdate(java.lang.String)
+    74:74:public java.lang.String getNoticetime()
+    77:78:public void setNoticetime(java.lang.String)
+    86:86:public java.lang.String getDevelop_user()
+    92:92:public java.lang.String getDevelop_time()
+com.cn7782.management.android.activity.charting.Approximator:
+    private com.cn7782.management.android.activity.charting.Approximator$ApproximatorType mType
+    private double mTolerance
+    private float mScaleRatio
+    private float mDeltaRatio
+    private boolean[] keep
+    18:42:public Approximator()
+    18:52:public Approximator(com.cn7782.management.android.activity.charting.Approximator$ApproximatorType,double)
+    61:63:public void setup(com.cn7782.management.android.activity.charting.Approximator$ApproximatorType,double)
+    71:72:public void setTolerance(double)
+    80:81:public void setType(com.cn7782.management.android.activity.charting.Approximator$ApproximatorType)
+    91:93:public void setRatios(float,float)
+    102:102:public java.util.ArrayList filter(java.util.ArrayList)
+    114:125:public java.util.ArrayList filter(java.util.ArrayList,double)
+    139:158:private java.util.ArrayList reduceWithDouglasPeuker(java.util.ArrayList,double)
+    172:204:private void algorithmDouglasPeucker(java.util.ArrayList,double,int,int)
+    218:225:public double calcPointToLineDistance(com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry)
+    244:247:public double calcAngleBetweenLines(com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry)
+    260:264:public double calcAngleWithRatios(com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry)
+    276:280:public double calcAngle(com.cn7782.management.android.activity.charting.Entry,com.cn7782.management.android.activity.charting.Entry)
+com.cn7782.management.android.activity.charting.Approximator$1
+com.cn7782.management.android.activity.charting.BarChart:
+    24:61:public BarChart(android.content.Context)
+    24:65:public BarChart(android.content.Context,android.util.AttributeSet)
+    24:69:public BarChart(android.content.Context,android.util.AttributeSet,int)
+    690:709:public android.graphics.RectF getBarBounds(com.cn7782.management.android.activity.charting.BarEntry)
+    766:766:public boolean is3DEnabled()
+    784:784:public boolean isDrawHighlightArrowEnabled()
+    803:803:public boolean isDrawValueAboveBarEnabled()
+    822:822:public boolean isDrawValuesForWholeStackEnabled()
+    842:842:public boolean isDrawBarShadowEnabled()
+com.cn7782.management.android.activity.charting.BarData:
+    14:18:public BarData(java.util.ArrayList,java.util.ArrayList)
+    14:22:public BarData(java.lang.String[],java.util.ArrayList)
+    14:26:public BarData(java.util.ArrayList,com.cn7782.management.android.activity.charting.BarDataSet)
+    14:30:public BarData(java.lang.String[],com.cn7782.management.android.activity.charting.BarDataSet)
+    33:35:private static java.util.ArrayList toArrayList(com.cn7782.management.android.activity.charting.BarDataSet)
+    61:62:public void setGroupSpace(float)
+com.cn7782.management.android.activity.charting.BarDataSet:
+    118:118:public int getEntryCountStacks()
+    127:127:public float getBarSpacePercent()
+    145:146:public void setBarSpacePercent(float)
+    156:157:public void setBarShadowColor(int)
+    176:177:public void setHighLightAlpha(int)
+    195:196:public void setStackLabels(java.lang.String[])
+com.cn7782.management.android.activity.charting.BarEntry:
+    21:24:public BarEntry(float[],int)
+    33:34:public BarEntry(float,int)
+    44:47:public BarEntry(float[],int,java.lang.String)
+    86:87:public void setVals(float[])
+    99:115:public int getClosestIndexAbove(float)
+    126:131:private static float calcSum(float[])
+com.cn7782.management.android.activity.charting.BarLineChartBase:
+    36:777:public BarLineChartBase(android.content.Context,android.util.AttributeSet,int)
+    36:777:public BarLineChartBase(android.content.Context,android.util.AttributeSet)
+    36:777:public BarLineChartBase(android.content.Context)
+    421:435:public void calculateLegendOffsets()
+    1031:1037:public void zoomOut(float,float)
+    1050:1058:public void zoom(float,float,float,float)
+    1117:1149:public synchronized void centerViewPort(int,float)
+    1297:1306:public void setScaleMinima(float,float)
+    1322:1340:public void setYRange(float,float,boolean)
+    1350:1356:public void resetYRange(boolean)
+    1377:1393:public android.graphics.PointF getPosition(com.cn7782.management.android.activity.charting.Entry)
+    1445:1445:public boolean isStartAtZeroEnabled()
+    1523:1523:public boolean isDrawVerticalGridEnabled()
+    1532:1532:public boolean isDrawHorizontalGridEnabled()
+    1577:1577:public boolean isDrawYLabelsEnabled()
+    1586:1586:public boolean isDrawXLabelsEnabled()
+    1734:1740:public com.cn7782.management.android.activity.charting.PointD getPixelsForValues(float,float)
+    1752:1752:public float getYValueByTouchPoint(float,float)
+    1793:1796:public boolean isFullyZoomedOut()
+    1862:1864:public void enableFiltering(com.cn7782.management.android.activity.charting.Approximator)
+    1870:1871:public void disableFiltering()
+    1879:1879:public boolean isFilteringEnabled()
+com.cn7782.management.android.activity.charting.BarLineChartBase$1
+com.cn7782.management.android.activity.charting.BarLineChartTouchListener:
+    private static final int NONE
+    private static final int DRAG
+    private static final int DRAWING
+    private static final int MOVE_POINT
+    private static final int X_ZOOM
+    private static final int Y_ZOOM
+    private static final int PINCH_ZOOM
+    270:270:public int getTouchMode()
+    373:373:public android.graphics.Matrix getMatrix()
+com.cn7782.management.android.activity.charting.BarLineScatterCandleData:
+    15:16:public BarLineScatterCandleData(java.util.ArrayList,java.util.ArrayList)
+    19:20:public BarLineScatterCandleData(java.lang.String[],java.util.ArrayList)
+com.cn7782.management.android.activity.charting.BarLineScatterCandleRadarData:
+    20:21:public BarLineScatterCandleRadarData(java.util.ArrayList,java.util.ArrayList)
+    24:25:public BarLineScatterCandleRadarData(java.lang.String[],java.util.ArrayList)
+    33:37:public void addLimitLine(com.cn7782.management.android.activity.charting.LimitLine)
+    45:47:public void addLimitLines(java.util.ArrayList)
+    54:56:public void resetLimitLines()
+    74:77:public com.cn7782.management.android.activity.charting.LimitLine getLimitLine(int)
+    85:98:private void updateMinMax()
+com.cn7782.management.android.activity.charting.BarLineScatterCandleRadarDataSet:
+    30:31:public void setHighLightColor(int)
+com.cn7782.management.android.activity.charting.CandleData:
+    8:9:public CandleData(java.util.ArrayList,java.util.ArrayList)
+    12:13:public CandleData(java.lang.String[],java.util.ArrayList)
+    16:17:public CandleData(java.util.ArrayList,com.cn7782.management.android.activity.charting.CandleDataSet)
+    20:21:public CandleData(java.lang.String[],com.cn7782.management.android.activity.charting.CandleDataSet)
+    24:26:private static java.util.ArrayList toArrayList(com.cn7782.management.android.activity.charting.CandleDataSet)
+com.cn7782.management.android.activity.charting.CandleDataSet:
+    73:79:public void setBodySpace(float)
+    97:98:public void setShadowWidth(float)
+com.cn7782.management.android.activity.charting.CandleEntry:
+    12:39:public CandleEntry(int,float,float,float,float)
+    68:68:public float getShadowRange()
+    77:77:public float getBodyRange()
+    107:108:public void setHigh(float)
+    120:121:public void setLow(float)
+    133:134:public void setClose(float)
+    146:147:public void setOpen(float)
+com.cn7782.management.android.activity.charting.CandleStickChart:
+    17:18:public CandleStickChart(android.content.Context)
+    21:22:public CandleStickChart(android.content.Context,android.util.AttributeSet)
+    25:26:public CandleStickChart(android.content.Context,android.util.AttributeSet,int)
+com.cn7782.management.android.activity.charting.Chart:
+    694:697:protected void transformPaths(java.util.ArrayList)
+    719:722:protected void transformRect(android.graphics.RectF)
+    749:751:protected void transformRects(java.util.ArrayList)
+    759:762:protected void transformRectsTouch(java.util.ArrayList)
+    770:773:protected void transformPathsTouch(java.util.ArrayList)
+com.cn7782.management.android.activity.charting.ChartData:
+    14:69:public ChartData(java.lang.String[],java.util.ArrayList)
+    128:129:public void notifyDataChanged()
+    336:342:protected java.lang.String[] getDataSetLabels()
+    395:406:public void addDataSet(com.cn7782.management.android.activity.charting.DataSet)
+    417:431:public boolean removeDataSet(com.cn7782.management.android.activity.charting.DataSet)
+    443:447:public boolean removeDataSet(int)
+    459:471:public void addEntry(com.cn7782.management.android.activity.charting.Entry,int)
+    482:498:public boolean removeEntry(com.cn7782.management.android.activity.charting.Entry,int)
+    512:518:public boolean removeEntry(int,int)
+    530:543:public com.cn7782.management.android.activity.charting.DataSet getDataSetForEntry(com.cn7782.management.android.activity.charting.Entry)
+    554:573:public int[] getColors()
+    584:590:public static java.util.ArrayList generateXVals(int,int)
+com.cn7782.management.android.activity.charting.DataSet:
+    176:194:public java.util.ArrayList getEntriesForXIndex(int)
+    253:258:public int getIndexInEntries(int)
+    307:329:public void addEntry(com.cn7782.management.android.activity.charting.Entry)
+    341:355:public boolean removeEntry(com.cn7782.management.android.activity.charting.Entry)
+    366:367:public boolean removeEntry(int)
+    395:396:public void setColors(int[])
+    410:417:public void setColors(int[],android.content.Context)
+    425:428:public void addColor(int)
+    437:439:public void setColor(int)
+    465:466:public void resetColors()
+com.cn7782.management.android.activity.charting.DrawingDataSetNotCreatedException:
+    private static final long serialVersionUID
+com.cn7782.management.android.activity.charting.Entry:
+    64:65:public void setXIndex(int)
+    101:102:public void setData(java.lang.Object)
+com.cn7782.management.android.activity.charting.FileUtils
+com.cn7782.management.android.activity.charting.Legend:
+    95:108:public Legend(int[],java.lang.String[])
+    182:188:public void setLegendLabels(java.lang.String[])
+    205:206:public void setPosition(com.cn7782.management.android.activity.charting.Legend$LegendPosition)
+    223:224:public void setForm(com.cn7782.management.android.activity.charting.Legend$LegendForm)
+    242:243:public void setTypeface(android.graphics.Typeface)
+    252:253:public void setFormSize(float)
+    281:282:public void setXEntrySpace(float)
+    300:301:public void setYEntrySpace(float)
+    319:320:public void setFormToTextSpace(float)
+    473:474:public void setTextSize(float)
+    500:501:public void setStackSpace(float)
+    538:539:public void setTextColor(int)
+com.cn7782.management.android.activity.charting.LimitLine:
+    17:35:public LimitLine(float)
+    54:59:public void setLineWidth(float)
+    77:78:public void setLineColor(int)
+    97:100:public void enableDashedLine(float,float,float)
+    106:107:public void disableDashedLine()
+    116:116:public boolean isDashedLineEnabled()
+com.cn7782.management.android.activity.charting.LineChart:
+    19:26:public LineChart(android.content.Context)
+    19:30:public LineChart(android.content.Context,android.util.AttributeSet)
+    19:34:public LineChart(android.content.Context,android.util.AttributeSet,int)
+com.cn7782.management.android.activity.charting.LineData:
+    9:10:public LineData(java.util.ArrayList,java.util.ArrayList)
+    13:14:public LineData(java.lang.String[],java.util.ArrayList)
+    17:18:public LineData(java.util.ArrayList,com.cn7782.management.android.activity.charting.LineDataSet)
+    21:22:public LineData(java.lang.String[],com.cn7782.management.android.activity.charting.LineDataSet)
+    25:27:private static java.util.ArrayList toArrayList(com.cn7782.management.android.activity.charting.LineDataSet)
+com.cn7782.management.android.activity.charting.LineDataSet:
+    73:79:public void setCubicIntensity(float)
+    115:118:public void enableDashedLine(float,float,float)
+    124:125:public void disableDashedLine()
+    133:133:public boolean isDashedLineEnabled()
+    152:153:public void setDrawCircles(boolean)
+    171:172:public void setDrawCubic(boolean)
+    191:191:public java.util.ArrayList getCircleColors()
+    215:216:public void setCircleColors(java.util.ArrayList)
+    228:229:public void setCircleColors(int[])
+    243:250:public void setCircleColors(int[],android.content.Context)
+    259:261:public void setCircleColor(int)
+    267:268:public void resetCircleColors()
+com.cn7782.management.android.activity.charting.LineRadarDataSet:
+    49:50:public void setFillColor(int)
+    69:70:public void setFillAlpha(int)
+    104:105:public void setDrawFilled(boolean)
+com.cn7782.management.android.activity.charting.MarkerView:
+    19:33:public MarkerView(android.content.Context,int)
+    94:96:public void setOffsets(float,float)
+com.cn7782.management.android.activity.charting.OnDrawLineChartTouchListener
+com.cn7782.management.android.activity.charting.PieChart:
+    514:521:public int getDataSetIndexForIndex(int)
+    561:561:public boolean isDrawHoleEnabled()
+    599:599:public boolean isDrawCenterTextEnabled()
+    617:617:public boolean isUsePercentValuesEnabled()
+    635:635:public boolean isDrawXValuesEnabled()
+com.cn7782.management.android.activity.charting.PieData:
+    20:21:public PieData(java.lang.String[],com.cn7782.management.android.activity.charting.PieDataSet)
+    35:35:public com.cn7782.management.android.activity.charting.PieDataSet getDataSet()
+com.cn7782.management.android.activity.charting.PieDataSet:
+    71:72:public void setSelectionShift(float)
+com.cn7782.management.android.activity.charting.PieRadarChartBase:
+    private com.nineoldandroids.animation.ObjectAnimator mSpinAnimator
+    297:303:public void spin(int,float,float)
+com.cn7782.management.android.activity.charting.RadarChart:
+    30:58:public RadarChart(android.content.Context)
+    30:62:public RadarChart(android.content.Context,android.util.AttributeSet)
+    30:66:public RadarChart(android.content.Context,android.util.AttributeSet,int)
+    649:649:public boolean isDrawYLabelsEnabled()
+    658:658:public boolean isDrawXLabelsEnabled()
+com.cn7782.management.android.activity.charting.RadarData:
+    14:15:public RadarData(java.util.ArrayList,java.util.ArrayList)
+    18:19:public RadarData(java.lang.String[],java.util.ArrayList)
+    22:23:public RadarData(java.util.ArrayList,com.cn7782.management.android.activity.charting.RadarDataSet)
+    26:27:public RadarData(java.lang.String[],com.cn7782.management.android.activity.charting.RadarDataSet)
+    30:32:private static java.util.ArrayList toArrayList(com.cn7782.management.android.activity.charting.RadarDataSet)
+com.cn7782.management.android.activity.charting.ScatterChart:
+    25:26:public ScatterChart(android.content.Context)
+    29:30:public ScatterChart(android.content.Context,android.util.AttributeSet)
+    33:34:public ScatterChart(android.content.Context,android.util.AttributeSet,int)
+com.cn7782.management.android.activity.charting.ScatterData:
+    9:10:public ScatterData(java.util.ArrayList,java.util.ArrayList)
+    13:14:public ScatterData(java.lang.String[],java.util.ArrayList)
+    17:18:public ScatterData(java.util.ArrayList,com.cn7782.management.android.activity.charting.ScatterDataSet)
+    21:22:public ScatterData(java.lang.String[],com.cn7782.management.android.activity.charting.ScatterDataSet)
+    25:27:private static java.util.ArrayList toArrayList(com.cn7782.management.android.activity.charting.ScatterDataSet)
+com.cn7782.management.android.activity.charting.ScatterDataSet:
+    60:61:public void setScatterShapeSize(float)
+    80:81:public void setScatterShape(com.cn7782.management.android.activity.charting.ScatterChart$ScatterShape)
+    100:101:public void setCustomScatterShape(android.graphics.Path)
+com.cn7782.management.android.activity.charting.Utils:
+    21:21:public Utils()
+    43:53:public static java.lang.String formatDecimal(double,int)
+    90:101:public static float convertPixelsToDp(float)
+    155:164:public static int getPieFormatDigits(float)
+    177:190:public static int getLegendFormatDigits(float,int)
+com.cn7782.management.android.activity.controller.AppManager:
+    58:59:public android.app.Activity getCurrentActivity()
+    66:72:public void finishActivity()
+    93:98:public void finishActivity(java.lang.Class)
+com.cn7782.management.android.activity.controller.FallDownController:
+    private static final java.lang.String TAG
+    33:33:public java.lang.String getMsgContent()
+    37:38:public void setMsgContent(java.lang.String)
+    102:108:public boolean isCanUseSim()
+    114:117:public static boolean isPhoneNumberValid(java.lang.String)
+com.cn7782.management.android.activity.controller.FallDownController$FallDownWarnCalledThread
+com.cn7782.management.android.activity.controller.FrameAnimationController:
+    private static final int MSG_ANIMATE
+com.cn7782.management.android.activity.controller.SensorController:
+    private static final java.lang.String TAG
+    private static final int LIST_SIZE
+com.cn7782.management.android.activity.controller.SensorController$2:
+    165:172:private boolean beginAndEndDataCheck()
+    253:299:private boolean falldownCheck()
+com.cn7782.management.android.activity.controller.ShakeListener:
+    private static final int SPEED_SHRESHOLD
+    private static final int UPTATE_INTERVAL_TIME
+    146:151:private boolean coordinate(java.lang.Float,java.lang.Float,java.lang.Float)
+com.cn7782.management.android.activity.controller.SoundManager:
+    45:51:public void playLoopedSound(int)
+com.cn7782.management.android.activity.datetimepickers.AmPmCirclesView:
+    private static final java.lang.String TAG
+    private static final int SELECTED_ALPHA
+    private static final int PRESSED_ALPHA
+    private static final int AM
+    private static final int PM
+com.cn7782.management.android.activity.datetimepickers.CircleView:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.datetimepickers.DatePickerController:
+    public abstract void unregisterOnDateChangedListener(com.cn7782.management.android.activity.datetimepickers.DatePickerDialog$OnDateChangedListener)
+com.cn7782.management.android.activity.datetimepickers.DatePickerDialog:
+    private static final java.lang.String TAG
+    private static final int UNINITIALIZED
+    private static final int MONTH_AND_DAY_VIEW
+    private static final int YEAR_VIEW
+    private static final java.lang.String KEY_SELECTED_YEAR
+    private static final java.lang.String KEY_SELECTED_MONTH
+    private static final java.lang.String KEY_SELECTED_DAY
+    private static final java.lang.String KEY_LIST_POSITION
+    private static final java.lang.String KEY_WEEK_START
+    private static final java.lang.String KEY_YEAR_START
+    private static final java.lang.String KEY_YEAR_END
+    private static final java.lang.String KEY_CURRENT_VIEW
+    private static final java.lang.String KEY_LIST_POSITION_OFFSET
+    private static final int DEFAULT_START_YEAR
+    private static final int DEFAULT_END_YEAR
+    private static final int ANIMATION_DURATION
+    private static final int ANIMATION_DELAY
+    355:363:public void setFirstDayOfWeek(int)
+    366:374:public void setYearRange(int,int)
+    377:378:public void setOnDateSetListener(com.cn7782.management.android.activity.datetimepickers.DatePickerDialog$OnDateSetListener)
+    455:456:public void unregisterOnDateChangedListener(com.cn7782.management.android.activity.datetimepickers.DatePickerDialog$OnDateChangedListener)
+com.cn7782.management.android.activity.datetimepickers.DayPickerView:
+    private static final java.lang.String TAG
+    protected static final int SCROLL_HYST_WEEKS
+    protected static final int GOTO_SCROLL_DURATION
+    protected static final int SCROLL_CHANGE_DELAY
+    protected int mFirstDayOfWeek
+    protected java.lang.CharSequence mPrevMonthName
+com.cn7782.management.android.activity.datetimepickers.RadialPickerLayout:
+    private static final java.lang.String TAG
+    private static final int VISIBLE_DEGREES_STEP_SIZE
+    private static final int HOUR_VALUE_TO_DEGREES_STEP_SIZE
+    private static final int MINUTE_VALUE_TO_DEGREES_STEP_SIZE
+    private static final int HOUR_INDEX
+    private static final int MINUTE_INDEX
+    private static final int AMPM_INDEX
+    private static final int ENABLE_PICKER_INDEX
+    private static final int AM
+    private static final int PM
+com.cn7782.management.android.activity.datetimepickers.RadialSelectorView:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.datetimepickers.RadialTextsView:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.datetimepickers.SimpleMonthAdapter:
+    private static final java.lang.String TAG
+    protected static final int MONTHS_IN_YEAR
+    118:118:public com.cn7782.management.android.activity.datetimepickers.SimpleMonthAdapter$CalendarDay getSelectedDay()
+com.cn7782.management.android.activity.datetimepickers.SimpleMonthView:
+    private static final java.lang.String TAG
+    protected static final int DEFAULT_SELECTED_DAY
+    protected static final int DEFAULT_WEEK_START
+    protected static final int DEFAULT_NUM_DAYS
+    protected static final int DEFAULT_SHOW_WK_NUM
+    protected static final int DEFAULT_FOCUS_MONTH
+    protected static final int DEFAULT_NUM_ROWS
+    protected static final int MAX_NUM_ROWS
+    private static final int SELECTED_CIRCLE_ALPHA
+com.cn7782.management.android.activity.datetimepickers.SwipeDismissTouchListener
+com.cn7782.management.android.activity.datetimepickers.SwipeDismissTouchListener$1
+com.cn7782.management.android.activity.datetimepickers.SwipeDismissTouchListener$2
+com.cn7782.management.android.activity.datetimepickers.SwipeDismissTouchListener$3
+com.cn7782.management.android.activity.datetimepickers.SwipeDismissTouchListener$DismissCallbacks
+com.cn7782.management.android.activity.datetimepickers.TextViewWithCircularIndicator:
+    private static final int SELECTED_CIRCLE_ALPHA
+com.cn7782.management.android.activity.datetimepickers.TimePickerDialog:
+    private static final java.lang.String TAG
+    private static final java.lang.String KEY_HOUR_OF_DAY
+    private static final java.lang.String KEY_MINUTE
+    private static final java.lang.String KEY_IS_24_HOUR_VIEW
+    private static final java.lang.String KEY_CURRENT_ITEM_SHOWING
+    private static final java.lang.String KEY_IN_KB_MODE
+    private static final java.lang.String KEY_TYPED_TIMES
+    private static final int PULSE_ANIMATOR_DELAY
+com.cn7782.management.android.activity.datetimepickers.Utils:
+    static final java.lang.String SHARED_PREFS_NAME
+com.cn7782.management.android.activity.datetimepickers.YearPickerView:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.dialog.JobTypeDialog:
+    24:25:public JobTypeDialog(android.content.Context)
+com.cn7782.management.android.activity.dialog.StatusDialog:
+    20:21:public StatusDialog(android.content.Context)
+com.cn7782.management.android.activity.dialog.UpdateDialog
+com.cn7782.management.android.activity.dialog.UpdateDialog$1
+com.cn7782.management.android.activity.receiver.JPushReceiver:
+    private static final java.lang.String TAG
+    private static final java.lang.String NOTICE
+    private static final java.lang.String DYNAMIC
+com.cn7782.management.android.activity.service.CoreService:
+    private static final java.lang.String TAG
+com.cn7782.management.android.activity.service.MessengerService$MsgBind:
+    154:154:public com.cn7782.management.android.activity.service.MessengerService getService()
+com.cn7782.management.android.activity.service.PositioningService:
+    private java.util.List mlist
+    protected static final java.lang.String TAG
+    private static final int ACCURACY
+com.cn7782.management.android.activity.tabview.CalendarView:
+    private static final java.lang.String TAG
+    private static final int TOTAL_COL
+    private static final int TOTAL_ROW
+    private static final int WEEK
+com.cn7782.management.android.activity.tabview.MyProgressDialog:
+    private android.widget.TextView backDown
+com.cn7782.management.android.activity.tabview.SwitchButton
+com.cn7782.management.android.activity.tabview.SwitchButton$1
+com.cn7782.management.android.activity.tabview.SwitchButton$PerformClick
+com.cn7782.management.android.activity.tabview.SwitchButton$SwitchAnimation
+com.cn7782.management.android.activity.tabview.SyncHorizontalScrollView:
+    42:61:public void showAndHideArrow()
+com.cn7782.management.android.db.MyDBHelper
+com.cn7782.management.android.offlinemaps.GpsLocationClient:
+    public abstract boolean gpsIsOpen()
+    public abstract com.cn7782.management.android.offlinemaps.GpsLocation getLocation()
+com.cn7782.management.android.offlinemaps.MobileGpsLocationClient:
+    private static final int MINTIME
+    40:43:public boolean gpsIsOpen()
+    47:47:public android.location.LocationManager getLocationManager()
+    136:140:public com.cn7782.management.android.offlinemaps.GpsLocation getLocation()
+com.cn7782.management.config.ConfigUtil:
+    private static final java.lang.String TAG
+    private static final java.lang.String Package
+    8:8:public ConfigUtil()
+    14:21:public static int getVerCode(android.content.Context)
+    37:39:public static java.lang.String getAppName(android.content.Context)
+com.cn7782.management.fragment.ChatFragment:
+    private static final int ITEM_VIDEO
+    private static final int ITEM_FILE
+    private static final int REQUEST_CODE_SELECT_VIDEO
+    private static final int REQUEST_CODE_SELECT_FILE
+    private static final int REQUEST_CODE_CONTEXT_MENU
+com.cn7782.management.fragment.ChooseAddress:
+    66:68:public void getString(java.lang.String)
+com.cn7782.management.fragment.ImageGridFragment:
+    private static final java.lang.String TAG
+com.cn7782.management.fragment.MyLocus
+com.cn7782.management.fragment.Search
+com.cn7782.management.fragment.SetUp
+com.cn7782.management.util.ActivityUtil:
+    private static final java.lang.String FOLDER_NAME
+com.cn7782.management.util.DateUtils:
+    7:7:public DateUtils()
+    18:19:public static java.lang.String getFormatDate_yyyy_MM(java.util.Date)
+    42:43:public static java.lang.String getFormatDate_yyyy_MM_dd_HH_mm_ss(java.util.Date)
+    54:58:public static java.lang.String getFormatDate_yyyy_MM_dd_HH_mm(java.util.Date)
+    69:70:public static java.lang.String getFormatDate_MM_dd_HH_mm(java.util.Date)
+    82:93:public static java.util.Date getDate(java.lang.String)
+    104:116:public static long getBeginTime(java.lang.String)
+    127:138:public static long getEndTime(java.lang.String)
+com.cn7782.management.util.FileUtil:
+    16:16:public java.lang.String getSDPATH()
+com.cn7782.management.util.LogUtil:
+    94:119:private static void recordLog(java.lang.String,java.lang.String,java.lang.String,boolean)
+    123:124:private static java.lang.String getDateformat(java.lang.String)
+    128:132:private static java.io.File createDir(java.lang.String)
+com.cn7782.management.util.LunarUtil
+com.cn7782.management.util.MedieaPlayerUtil:
+    94:94:public void playArriveAlarmRing()
+    98:132:public void playRing(int)
+    191:208:public static android.graphics.Bitmap getVideoThumbnail(java.lang.String)
+    243:249:public static void playVideo(android.content.Context,java.lang.String)
+com.cn7782.management.util.NetworkUtil
+com.cn7782.management.util.PictureUtil:
+    private static final java.lang.String FOLDER_NAME
+    24:24:public PictureUtil()
+    219:223:public static void deleteTempFile(java.lang.String)
+    229:235:public static void galleryAddPic(android.content.Context,java.lang.String)
+    243:250:public static java.io.File getAlbumDir()
+    259:259:public static java.lang.String getAlbumName()
+com.cn7782.management.util.SharedPreferenceUtil:
+    private static final java.lang.String SHARE_PRE_NAME
+    6:6:public SharedPreferenceUtil()
+com.cn7782.management.util.SoundMeter:
+    private static final double EMA_FILTER
+    47:50:public void pause()
+    53:56:public void start()
+    67:69:public double getAmplitudeEMA()
+com.cn7782.management.util.TimeUtil:
+    private static final java.lang.String TIME_FORMAT
+    6:6:public TimeUtil()
+    21:42:public static int convertToSeconds(java.lang.String)
+com.cn7782.management.util.ToastUtil:
+    6:6:public ToastUtil()
+    32:36:public static void cancelToast()
+    40:42:public static void showMessage(android.content.Context,int)
+com.cn7782.management.util.TrackSumbitUtil:
+    18:18:public TrackSumbitUtil()
+com.cn7782.management.video.util.util.ImageCache:
+    private static final java.lang.String TAG
+    private static final int DEFAULT_MEM_CACHE_SIZE
+    private static final int DEFAULT_COMPRESS_QUALITY
+    private static final boolean DEFAULT_MEM_CACHE_ENABLED
+    private static final boolean DEFAULT_INIT_DISK_CACHE_ON_CREATE
+    242:272:protected android.graphics.Bitmap getBitmapFromReusableSet(android.graphics.BitmapFactory$Options)
+    338:353:private static boolean canUseForInBitmap(android.graphics.Bitmap,android.graphics.BitmapFactory$Options)
+    365:374:private static int getBytesPerPixel(android.graphics.Bitmap$Config)
+    390:395:public static java.io.File getDiskCacheDir(android.content.Context,java.lang.String)
+    405:411:public static java.lang.String hashKeyForDisk(java.lang.String)
+    416:424:private static java.lang.String bytesToHexString(byte[])
+    463:466:public static boolean isExternalStorageRemovable()
+    478:485:public static java.io.File getExternalCacheDir(android.content.Context)
+com.cn7782.management.video.util.util.ImageResizer:
+    private static final java.lang.String TAG
+    28:30:public ImageResizer(android.content.Context,int,int)
+    73:73:private android.graphics.Bitmap processBitmap(int)
+    108:124:public static android.graphics.Bitmap decodeSampledBitmapFromResource(android.content.res.Resources,int,int,int,com.cn7782.management.video.util.util.ImageCache)
+    148:163:public static android.graphics.Bitmap decodeSampledBitmapFromFile(java.lang.String,int,int,com.cn7782.management.video.util.util.ImageCache)
+    188:204:public static android.graphics.Bitmap decodeSampledBitmapFromDescriptor(java.io.FileDescriptor,int,int,com.cn7782.management.video.util.util.ImageCache)
+    214:225:private static void addInBitmapOptions(android.graphics.BitmapFactory$Options,com.cn7782.management.video.util.util.ImageCache)
+    249:284:public static int calculateInSampleSize(android.graphics.BitmapFactory$Options,int,int)
+com.cn7782.management.video.util.util.ImageWorker:
+    private static final java.lang.String TAG
+    private static final int FADE_IN_TIME
+    private static final int MESSAGE_CLEAR
+    private static final int MESSAGE_INIT_DISK_CACHE
+    private static final int MESSAGE_FLUSH
+    private static final int MESSAGE_CLOSE
+    166:166:protected com.cn7782.management.video.util.util.ImageCache getImageCache()
+com.cn7782.management.video.util.util.RecyclingBitmapDrawable:
+    static final java.lang.String TAG
+com.cn7782.management.video.util.util.Utils:
+    18:19:private Utils()
+    23:47:public static void enableStrictMode()
+    50:50:public static boolean hasFroyo()
+    55:55:public static boolean hasGingerbread()
+    71:71:public static boolean hasKitKat()
+com.cn7782.management.view.LinView
+com.cn7782.management.view.LinView$1
+com.cn7782.management.view.PullToRefreshView:
+    private static final java.lang.String TAG
+    private static final int PULL_TO_REFRESH
+    private static final int RELEASE_TO_REFRESH
+    private static final int REFRESHING
+    private static final int PULL_UP_STATE
+    private static final int PULL_DOWN_STATE
+    private java.lang.String mLastUpdateTime
+    220:221:public void hideFooterView()
+    571:573:public void onHeaderRefreshComplete(java.lang.CharSequence)
+    616:617:private void lock()
+    624:625:private void unlock()
+com.cn7782.management.view.SlidingListView:
+    private android.widget.ImageView image
+    private com.cn7782.management.android.activity.tabview.MyProgressDialog myProgressDialog
+com.cn7782.management.view.ToggleButton:
+    128:132:public void toggleOn()
+    135:139:public void toggleOff()
+com.google.gson.DefaultDateTypeAdapter
+com.google.gson.FieldAttributes:
+    53:53:public java.lang.Class getDeclaringClass()
+    60:60:public java.lang.String getName()
+    80:80:public java.lang.reflect.Type getDeclaredType()
+    100:100:public java.lang.Class getDeclaredClass()
+    111:111:public java.lang.annotation.Annotation getAnnotation(java.lang.Class)
+    121:121:public java.util.Collection getAnnotations()
+    135:135:public boolean hasModifier(int)
+    146:146:java.lang.Object get(java.lang.Object)
+    155:155:boolean isSynthetic()
+com.google.gson.Gson:
+    static final boolean DEFAULT_JSON_NON_EXECUTABLE
+    private static final java.lang.String JSON_NON_EXECUTABLE_PREFIX
+    462:465:public com.google.gson.JsonElement toJsonTree(java.lang.Object)
+    485:487:public com.google.gson.JsonElement toJsonTree(java.lang.Object,java.lang.reflect.Type)
+    546:551:public void toJson(java.lang.Object,java.lang.Appendable)
+    689:690:public java.lang.Object fromJson(java.lang.String,java.lang.Class)
+    740:743:public java.lang.Object fromJson(java.io.Reader,java.lang.Class)
+    841:842:public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.Class)
+    865:868:public java.lang.Object fromJson(com.google.gson.JsonElement,java.lang.reflect.Type)
+com.google.gson.Gson$1:
+    126:126:public java.lang.Object deserialize(com.google.gson.JsonElement,java.lang.reflect.Type)
+com.google.gson.Gson$2:
+    132:132:public com.google.gson.JsonElement serialize(java.lang.Object)
+    135:135:public com.google.gson.JsonElement serialize(java.lang.Object,java.lang.reflect.Type)
+com.google.gson.GsonBuilder
+com.google.gson.JsonArray:
+    45:49:com.google.gson.JsonArray deepCopy()
+    70:71:public void addAll(com.google.gson.JsonArray)
+    79:79:public int size()
+    101:101:public com.google.gson.JsonElement get(int)
+    33:33:bridge synthetic com.google.gson.JsonElement deepCopy()
+com.google.gson.JsonDeserializationContext:
+    public abstract java.lang.Object deserialize(com.google.gson.JsonElement,java.lang.reflect.Type)
+com.google.gson.JsonDeserializer
+com.google.gson.JsonElement:
+    abstract com.google.gson.JsonElement deepCopy()
+com.google.gson.JsonIOException:
+    private static final long serialVersionUID
+    33:34:public JsonIOException(java.lang.String,java.lang.Throwable)
+com.google.gson.JsonNull:
+    45:45:com.google.gson.JsonNull deepCopy()
+    26:26:bridge synthetic com.google.gson.JsonElement deepCopy()
+com.google.gson.JsonObject:
+    38:42:com.google.gson.JsonObject deepCopy()
+    68:68:public com.google.gson.JsonElement remove(java.lang.String)
+    79:80:public void addProperty(java.lang.String,java.lang.String)
+    90:91:public void addProperty(java.lang.String,java.lang.Number)
+    101:102:public void addProperty(java.lang.String,java.lang.Boolean)
+    112:113:public void addProperty(java.lang.String,java.lang.Character)
+    122:122:private com.google.gson.JsonElement createJsonElement(java.lang.Object)
+    142:142:public boolean has(java.lang.String)
+    152:152:public com.google.gson.JsonElement get(java.lang.String)
+    162:162:public com.google.gson.JsonPrimitive getAsJsonPrimitive(java.lang.String)
+    172:172:public com.google.gson.JsonArray getAsJsonArray(java.lang.String)
+    182:182:public com.google.gson.JsonObject getAsJsonObject(java.lang.String)
+    32:32:bridge synthetic com.google.gson.JsonElement deepCopy()
+com.google.gson.JsonParseException:
+    static final long serialVersionUID
+com.google.gson.JsonParser
+com.google.gson.JsonPrimitive:
+    74:76:public JsonPrimitive(java.lang.Character)
+    84:86:JsonPrimitive(java.lang.Object)
+    90:90:com.google.gson.JsonPrimitive deepCopy()
+    33:33:bridge synthetic com.google.gson.JsonElement deepCopy()
+com.google.gson.JsonSerializationContext:
+    public abstract com.google.gson.JsonElement serialize(java.lang.Object)
+    public abstract com.google.gson.JsonElement serialize(java.lang.Object,java.lang.reflect.Type)
+com.google.gson.JsonSerializer
+com.google.gson.JsonStreamParser
+com.google.gson.JsonSyntaxException:
+    private static final long serialVersionUID
+com.google.gson.TreeTypeAdapter
+com.google.gson.TreeTypeAdapter$1
+com.google.gson.TreeTypeAdapter$SingleTypeFactory
+com.google.gson.internal.$Gson$Preconditions:
+    32:32:public $Gson$Preconditions()
+com.google.gson.internal.$Gson$Types:
+    45:45:private $Gson$Types()
+com.google.gson.internal.$Gson$Types$GenericArrayTypeImpl:
+    private static final long serialVersionUID
+com.google.gson.internal.$Gson$Types$ParameterizedTypeImpl:
+    private static final long serialVersionUID
+com.google.gson.internal.$Gson$Types$WildcardTypeImpl:
+    private static final long serialVersionUID
+com.google.gson.internal.Excluder:
+    private static final double IGNORE_VERSIONS
+com.google.gson.internal.LazilyParsedNumber:
+    76:76:private java.lang.Object writeReplace()
+com.google.gson.internal.LinkedTreeMap:
+    625:625:private java.lang.Object writeReplace()
+com.google.gson.internal.Primitives:
+    32:32:private Primitives()
+    80:80:public static boolean isWrapperType(java.lang.reflect.Type)
+    96:98:public static java.lang.Class wrap(java.lang.Class)
+    113:115:public static java.lang.Class unwrap(java.lang.Class)
+com.google.gson.internal.Streams:
+    35:79:public Streams()
+    40:60:public static com.google.gson.JsonElement parse(com.google.gson.stream.JsonReader)
+com.google.gson.internal.bind.JsonTreeWriter:
+    163:167:public com.google.gson.stream.JsonWriter value(double)
+com.google.gson.internal.bind.TypeAdapters$23:
+    private static final java.lang.String YEAR
+    private static final java.lang.String MONTH
+    private static final java.lang.String DAY_OF_MONTH
+    private static final java.lang.String HOUR_OF_DAY
+    private static final java.lang.String MINUTE
+    private static final java.lang.String SECOND
+com.google.gson.reflect.TypeToken:
+    112:112:public boolean isAssignableFrom(java.lang.Class)
+    123:140:public boolean isAssignableFrom(java.lang.reflect.Type)
+    153:153:public boolean isAssignableFrom(com.google.gson.reflect.TypeToken)
+    161:178:private static boolean isAssignableFrom(java.lang.reflect.Type,java.lang.reflect.GenericArrayType)
+    188:231:private static boolean isAssignableFrom(java.lang.reflect.Type,java.lang.reflect.ParameterizedType,java.util.Map)
+    240:250:private static boolean typeEquals(java.lang.reflect.ParameterizedType,java.lang.reflect.ParameterizedType,java.util.Map)
+    257:265:private static varargs java.lang.AssertionError buildUnexpectedTypeError(java.lang.reflect.Type,java.lang.Class[])
+    273:273:private static boolean matches(java.lang.reflect.Type,java.lang.reflect.Type,java.util.Map)
+com.google.gson.stream.JsonReader:
+    private static final long MIN_INCOMPLETE_INTEGER
+    private static final int PEEKED_NONE
+    private static final int PEEKED_BEGIN_OBJECT
+    private static final int PEEKED_END_OBJECT
+    private static final int PEEKED_BEGIN_ARRAY
+    private static final int PEEKED_END_ARRAY
+    private static final int PEEKED_TRUE
+    private static final int PEEKED_FALSE
+    private static final int PEEKED_NULL
+    private static final int PEEKED_SINGLE_QUOTED
+    private static final int PEEKED_DOUBLE_QUOTED
+    private static final int PEEKED_UNQUOTED
+    private static final int PEEKED_BUFFERED
+    private static final int PEEKED_SINGLE_QUOTED_NAME
+    private static final int PEEKED_DOUBLE_QUOTED_NAME
+    private static final int PEEKED_UNQUOTED_NAME
+    private static final int PEEKED_LONG
+    private static final int PEEKED_NUMBER
+    private static final int PEEKED_EOF
+    private static final int NUMBER_CHAR_NONE
+    private static final int NUMBER_CHAR_SIGN
+    private static final int NUMBER_CHAR_DIGIT
+    private static final int NUMBER_CHAR_DECIMAL
+    private static final int NUMBER_CHAR_FRACTION_DIGIT
+    private static final int NUMBER_CHAR_EXP_E
+    private static final int NUMBER_CHAR_EXP_SIGN
+    private static final int NUMBER_CHAR_EXP_DIGIT
+com.google.gson.stream.JsonScope
+com.google.gson.stream.JsonWriter:
+    462:468:public com.google.gson.stream.JsonWriter value(double)
+com.google.gson.stream.MalformedJsonException:
+    private static final long serialVersionUID
+    33:37:public MalformedJsonException(java.lang.String,java.lang.Throwable)
+    39:43:public MalformedJsonException(java.lang.Throwable)
+com.novell.sasl.client.DigestChallenge:
+    private static final int CIPHER_3DES
+    private static final int CIPHER_DES
+    private static final int CIPHER_RC4_40
+    private static final int CIPHER_RC4
+    private static final int CIPHER_RC4_56
+    private static final int CIPHER_UNRECOGNIZED
+    private static final int CIPHER_RECOGNIZED_MASK
+com.novell.sasl.client.DigestMD5SaslClient:
+    private static final int STATE_INITIAL
+    private static final int STATE_DIGEST_RESPONSE_SENT
+    private static final int STATE_VALID_SERVER_RESPONSE
+    private static final int STATE_INVALID_SERVER_RESPONSE
+    private static final int STATE_DISPOSED
+    private static final int NONCE_BYTE_COUNT
+    private static final int NONCE_HEX_COUNT
+    private static final java.lang.String DIGEST_METHOD
+com.novell.sasl.client.DirectiveList:
+    private static final int STATE_LOOKING_FOR_FIRST_DIRECTIVE
+    private static final int STATE_LOOKING_FOR_DIRECTIVE
+    private static final int STATE_SCANNING_NAME
+    private static final int STATE_LOOKING_FOR_EQUALS
+    private static final int STATE_LOOKING_FOR_VALUE
+    private static final int STATE_LOOKING_FOR_COMMA
+    private static final int STATE_SCANNING_QUOTED_STRING_VALUE
+    private static final int STATE_SCANNING_TOKEN_VALUE
+    private static final int STATE_NO_UTF8_SUPPORT
+    private java.lang.String m_curName
+com.novell.sasl.client.ExternalSaslClient:
+    private static final int STATE_INITIAL
+    private static final int STATE_VALID_SERVER_RESPONSE
+    private static final int STATE_INVALID_SERVER_RESPONSE
+    private static final int STATE_DISPOSED
+com.novell.sasl.client.ParsedDirective:
+    public static final int QUOTED_STRING_VALUE
+    public static final int TOKEN_VALUE
+    int getValueType()
+com.novell.sasl.client.TokenParser:
+    private static final int STATE_LOOKING_FOR_FIRST_TOKEN
+    private static final int STATE_LOOKING_FOR_TOKEN
+    private static final int STATE_SCANNING_TOKEN
+    private static final int STATE_LOOKING_FOR_COMMA
+    private static final int STATE_PARSING_ERROR
+    private static final int STATE_DONE
+com.xonami.javaBells.package-info
+de.measite.smack.Sasl:
+    private static final java.lang.String CLIENTFACTORYSRV
+    private static final java.lang.String SERVERFACTORYSRV
+gov.nist.core.GenericObject
+gov.nist.core.GenericObjectList
+gov.nist.core.InternalErrorHandler
+gov.nist.core.LogLevels
+gov.nist.core.Match
+gov.nist.core.NameValue
+gov.nist.core.PackageNames
+gov.nist.core.Separators
+gov.nist.core.StackLogger
+gov.nist.javax.sdp.fields.AttributeField
+gov.nist.javax.sdp.fields.SDPField
+gov.nist.javax.sdp.fields.SDPFieldNames
+gov.nist.javax.sdp.fields.SDPObject
+internal.org.apache.http.entity.mime.Header:
+    public java.util.List getFields()
+    public java.util.List getFields(java.lang.String)
+    public int removeFields(java.lang.String)
+    public void setField(internal.org.apache.http.entity.mime.MinimalField)
+internal.org.apache.http.entity.mime.HttpMultipart:
+    public HttpMultipart(java.lang.String,java.nio.charset.Charset,java.lang.String)
+    public HttpMultipart(java.lang.String,java.lang.String)
+    public java.lang.String getSubType()
+    public java.nio.charset.Charset getCharset()
+    public internal.org.apache.http.entity.mime.HttpMultipartMode getMode()
+internal.org.apache.http.entity.mime.content.AbstractContentBody:
+    public java.lang.String getMediaType()
+    public java.lang.String getSubType()
+internal.org.apache.http.entity.mime.content.ByteArrayBody
+internal.org.apache.http.entity.mime.content.ContentDescriptor:
+    public abstract java.lang.String getMediaType()
+    public abstract java.lang.String getSubType()
+internal.org.apache.http.entity.mime.content.FileBody:
+    public FileBody(java.io.File,java.lang.String,java.lang.String)
+    public FileBody(java.io.File,java.lang.String)
+    public FileBody(java.io.File)
+    public java.io.InputStream getInputStream()
+    public java.io.File getFile()
+internal.org.apache.http.entity.mime.content.Header
+internal.org.apache.http.entity.mime.content.InputStreamBody
+internal.org.apache.http.entity.mime.content.StringBody:
+    public static internal.org.apache.http.entity.mime.content.StringBody create(java.lang.String,java.lang.String,java.nio.charset.Charset)
+    public static internal.org.apache.http.entity.mime.content.StringBody create(java.lang.String,java.nio.charset.Charset)
+    public static internal.org.apache.http.entity.mime.content.StringBody create(java.lang.String)
+    public StringBody(java.lang.String,java.nio.charset.Charset)
+    public java.io.Reader getReader()
+javax.sdp.Attribute
+javax.sdp.EMail
+javax.sdp.Field:
+    public abstract char getTypeChar()
+    public abstract java.lang.Object clone()
+javax.sdp.Info
+javax.sdp.Key
+javax.sdp.Media
+javax.sdp.Origin
+javax.sdp.Phone
+javax.sdp.RepeatTime
+javax.sdp.SdpConstants
+javax.sdp.SdpEncoder
+javax.sdp.SdpException:
+    public SdpException()
+    public SdpException(java.lang.String)
+    public SdpException(java.lang.String,java.lang.Throwable)
+    public SdpException(java.lang.Throwable)
+    public java.lang.Throwable getRootCause()
+javax.sdp.SdpFactoryException
+javax.sdp.SdpParseException:
+    private int lineNumber
+    private int charOffset
+    public SdpParseException(int,int,java.lang.String,java.lang.Throwable)
+    public SdpParseException(int,int,java.lang.String)
+    public int getLineNumber()
+    public int getCharOffset()
+javax.sdp.SessionDescription
+javax.sdp.SessionName
+javax.sdp.Time:
+    public abstract java.util.Date getStart()
+    public abstract void setStart(java.util.Date)
+    public abstract java.util.Date getStop()
+    public abstract void setStop(java.util.Date)
+    public abstract boolean isZero()
+    public abstract void setZero()
+    public abstract boolean getTypedTime()
+    public abstract void setTypedTime(boolean)
+javax.sdp.TimeZoneAdjustment
+javax.sdp.URI
+javax.sdp.Version
+u.aly.a:
+    81:82:public void a(u.aly.ba)
+u.aly.aa:
+    private static final java.lang.String h
+    private static final java.lang.String i
+    private static final java.lang.String j
+    private static final java.lang.String k
+    private static final java.lang.String l
+    private static final java.lang.String m
+u.aly.ac:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    22:23:public ac()
+u.aly.ad:
+    private static final java.lang.String a
+u.aly.ae:
+    private static final long e
+u.aly.ai:
+    19:21:public ai(org.json.JSONArray)
+u.aly.ak:
+    210:210:public int c()
+    214:214:public int d()
+u.aly.al:
+    private static final int a
+    private static final int b
+    private static final int c
+    private static final int d
+    private static final long e
+    private static final long f
+    private static final long g
+    98:98:public long b()
+u.aly.am:
+    80:80:public long c()
+u.aly.ao:
+    private static final int f
+    199:203:private void a(java.io.ObjectOutputStream)
+    208:213:private void a(java.io.ObjectInputStream)
+u.aly.ap:
+    250:254:private void a(java.io.ObjectOutputStream)
+    258:262:private void a(java.io.ObjectInputStream)
+u.aly.aq:
+    private static final int x
+    private static final int y
+    626:630:private void a(java.io.ObjectOutputStream)
+    635:640:private void a(java.io.ObjectInputStream)
+u.aly.ar:
+    private static final int j
+    private static final int k
+    private static final int l
+    286:290:private void a(java.io.ObjectOutputStream)
+    295:300:private void a(java.io.ObjectInputStream)
+u.aly.as:
+    198:202:private void a(java.io.ObjectOutputStream)
+    206:210:private void a(java.io.ObjectInputStream)
+u.aly.at:
+    private static final int L
+    private static final int M
+    private static final int N
+    906:910:private void a(java.io.ObjectOutputStream)
+    915:920:private void a(java.io.ObjectInputStream)
+u.aly.au:
+    private static final int n
+    private static final int o
+    private static final int p
+    403:407:private void a(java.io.ObjectOutputStream)
+    412:417:private void a(java.io.ObjectInputStream)
+u.aly.av:
+    private static final int j
+    309:313:private void a(java.io.ObjectOutputStream)
+    318:323:private void a(java.io.ObjectInputStream)
+u.aly.ax:
+    private static final int n
+    private static final int o
+    private static final int p
+    401:405:private void a(java.io.ObjectOutputStream)
+    410:415:private void a(java.io.ObjectInputStream)
+u.aly.az:
+    private static final int l
+    341:345:private void a(java.io.ObjectOutputStream)
+    350:355:private void a(java.io.ObjectInputStream)
+u.aly.b:
+    private static final java.lang.String a
+u.aly.ba:
+    private static final int j
+    private static final int k
+    289:293:private void a(java.io.ObjectOutputStream)
+    298:303:private void a(java.io.ObjectInputStream)
+u.aly.bb:
+    339:343:private void a(java.io.ObjectOutputStream)
+    347:351:private void a(java.io.ObjectInputStream)
+u.aly.bc:
+    private static final int j
+    320:324:private void a(java.io.ObjectOutputStream)
+    329:334:private void a(java.io.ObjectInputStream)
+u.aly.bd:
+    private static final int j
+    293:297:private void a(java.io.ObjectOutputStream)
+    302:307:private void a(java.io.ObjectInputStream)
+u.aly.be:
+    399:403:private void a(java.io.ObjectOutputStream)
+    407:411:private void a(java.io.ObjectInputStream)
+u.aly.bf:
+    private static final int h
+    private static final int i
+    240:244:private void a(java.io.ObjectOutputStream)
+    249:254:private void a(java.io.ObjectInputStream)
+u.aly.bg:
+    private static final int j
+    private static final int k
+    private static final int l
+    283:287:private void a(java.io.ObjectOutputStream)
+    292:297:private void a(java.io.ObjectInputStream)
+u.aly.bh:
+    private static final int x
+    private static final int y
+    private static final int z
+    private static final int A
+    598:602:private void a(java.io.ObjectOutputStream)
+    607:612:private void a(java.io.ObjectInputStream)
+u.aly.bi:
+    private static final int h
+    247:251:private void a(java.io.ObjectOutputStream)
+    256:261:private void a(java.io.ObjectInputStream)
+u.aly.bj:
+    335:339:private void a(java.io.ObjectOutputStream)
+    344:348:private void a(java.io.ObjectInputStream)
+u.aly.bk:
+    private static final int h
+    private static final int i
+    241:245:private void a(java.io.ObjectOutputStream)
+    250:255:private void a(java.io.ObjectInputStream)
+u.aly.bl:
+    private static final int j
+    293:297:private void a(java.io.ObjectOutputStream)
+    302:307:private void a(java.io.ObjectInputStream)
+u.aly.bn:
+    private static final int r
+    private static final int s
+    private static final int t
+    510:514:private void a(java.io.ObjectOutputStream)
+    519:524:private void a(java.io.ObjectInputStream)
+u.aly.bo:
+    private static final int h
+    private static final int i
+    241:245:private void a(java.io.ObjectOutputStream)
+    250:255:private void a(java.io.ObjectInputStream)
+u.aly.bp:
+    799:803:private void a(java.io.ObjectOutputStream)
+    807:811:private void a(java.io.ObjectInputStream)
+u.aly.bq:
+    private static final int l
+    344:348:private void a(java.io.ObjectOutputStream)
+    353:358:private void a(java.io.ObjectInputStream)
+u.aly.br:
+    private static final int x
+    private static final int y
+    private static final int z
+    private static final int A
+    622:626:private void a(java.io.ObjectOutputStream)
+    631:636:private void a(java.io.ObjectInputStream)
+u.aly.bu
+u.aly.bv
+u.aly.bv$a
+u.aly.bv$b
+u.aly.bw
+u.aly.by
+u.aly.bz
+u.aly.cb
+u.aly.cc
+u.aly.cd
+u.aly.cf:
+    private static final java.lang.String b
+u.aly.cg:
+    25:25:public cg()
+    37:38:public static final void a(int,byte[])
+    52:56:public static final void a(int,byte[],int)
+    67:67:public static final int a(byte[])
+    81:81:public static final int a(byte[],int)
+    94:94:public static final boolean a(short,int)
+    102:102:public static final boolean a(long,int)
+    113:113:public static final short b(short,int)
+    121:121:public static final long b(long,int)
+    132:132:public static final short a(short,int,boolean)
+    143:146:public static final long a(long,int,boolean)
+u.aly.ch:
+    53:53:public short b()
+u.aly.ci:
+    private static final long m
+u.aly.cj:
+    public abstract u.aly.cq b(int)
+    public abstract void b()
+u.aly.ck:
+    34:34:private ck()
+    55:55:public static int a(boolean,boolean)
+    69:74:public static int a(short,short)
+    89:94:public static int a(long,long)
+    99:104:public static int a(double,double)
+    109:109:public static int a(java.lang.String,java.lang.String)
+    299:305:public static byte[] a(byte[])
+u.aly.cl
+u.aly.cm:
+    88:94:public void a(u.aly.cj,java.lang.String,java.lang.String)
+    107:117:public varargs void a(u.aly.cj,byte[],u.aly.cq,u.aly.cq[])
+    128:128:public varargs java.lang.Boolean a(byte[],u.aly.cq,u.aly.cq[])
+    140:140:public varargs java.lang.Byte b(byte[],u.aly.cq,u.aly.cq[])
+    152:152:public varargs java.lang.Double c(byte[],u.aly.cq,u.aly.cq[])
+    164:164:public varargs java.lang.Short d(byte[],u.aly.cq,u.aly.cq[])
+    176:176:public varargs java.lang.Integer e(byte[],u.aly.cq,u.aly.cq[])
+    188:188:public varargs java.lang.Long f(byte[],u.aly.cq,u.aly.cq[])
+    200:200:public varargs java.lang.String g(byte[],u.aly.cq,u.aly.cq[])
+    213:213:public varargs java.nio.ByteBuffer h(byte[],u.aly.cq,u.aly.cq[])
+    226:236:public varargs java.lang.Short i(byte[],u.aly.cq,u.aly.cq[])
+    242:293:private varargs java.lang.Object a(byte,byte[],u.aly.cq,u.aly.cq[])
+    298:335:private varargs u.aly.dd j(byte[],u.aly.cq,u.aly.cq[])
+    346:347:public void a(u.aly.cj,java.lang.String)
+u.aly.cn
+u.aly.co
+u.aly.cp:
+    private static final long a
+u.aly.cq:
+    public abstract java.lang.String b()
+u.aly.cs:
+    97:99:public java.lang.String a(u.aly.cj,java.lang.String)
+    112:112:public java.lang.String b(u.aly.cj)
+u.aly.d$a:
+    251:252:public void c(java.lang.String)
+u.aly.db:
+    protected static final int a
+    protected static final int b
+    85:86:public db(u.aly.dw)
+    95:105:public void a(u.aly.dg)
+    107:107:public void a()
+    140:142:public void a(u.aly.dm)
+    144:144:public void g()
+    210:221:public u.aly.dg h()
+    225:225:public void i()
+u.aly.dc:
+    private static final byte h
+    private static final byte i
+    private static final byte j
+    private static final byte k
+    private static final int l
+    152:153:public dc(u.aly.dw)
+    170:174:public void a(u.aly.dg)
+    266:267:public void a(u.aly.dm)
+    353:353:public void a()
+    356:356:public void g()
+    473:485:public u.aly.dg h()
+    701:701:public void i()
+u.aly.dc$a:
+    74:76:public dc$a(int)
+u.aly.dc$b
+u.aly.di:
+    41:41:private di()
+    59:59:public u.aly.dw C()
+    public abstract void a(u.aly.dg)
+    public abstract void a()
+    public abstract void a(u.aly.dm)
+    public abstract void g()
+    public abstract void a(byte)
+    public abstract u.aly.dg h()
+    public abstract void i()
+u.aly.dj:
+    private static final long h
+u.aly.dl:
+    29:29:public dl()
+    49:50:public static void a(int)
+    171:194:public static u.aly.dk a(byte[],u.aly.dk)
+u.aly.do:
+    41:42:public do(u.aly.dw)
+u.aly.do$a
+u.aly.du:
+    36:54:public du(java.io.InputStream)
+    36:74:public du(java.io.InputStream,java.io.OutputStream)
+    83:83:public boolean a()
+    89:89:public void b()
+    95:111:public void c()
+    150:158:public void d()
+u.aly.dv:
+    30:32:public dv(byte[])
+    34:36:public dv(byte[],int,int)
+    53:53:public void c()
+    57:57:public boolean a()
+    61:61:public void b()
+u.aly.dw:
+    public abstract boolean a()
+    42:42:public boolean i()
+    public abstract void b()
+    public abstract void c()
+    125:125:public void d()
+u.aly.dx:
+    private static final long g
+u.aly.dy
+u.aly.e:
+    private static final java.lang.String a
+u.aly.f:
+    private static final java.lang.String a
+    259:260:public boolean e()
+u.aly.f$a:
+    264:280:f$a(u.aly.bc)
+u.aly.g:
+    private static final java.lang.String a
+u.aly.h:
+    private static final java.lang.String a
+u.aly.i:
+    private static final java.lang.String a
+u.aly.j:
+    private static final java.lang.String a
+    private static final java.lang.String b
+u.aly.k$a:
+    569:571:public void a(int,int)
+u.aly.l:
+    28:29:public void a(u.aly.p)
+u.aly.m:
+    28:32:public int a(java.lang.String)
+u.aly.s:
+    46:46:public android.content.Context a()
+    50:50:protected boolean a(int)
+u.aly.u:
+    9:9:public u()
+u.aly.x:
+    private static final java.lang.String a
+    9:10:private x()
+u.aly.y:
+    private static final int a
+    private static final int b
+    private static final int c
+u.aly.z:
+    private static final java.lang.String a
+    private static final java.lang.String b
+    private static final java.lang.String c
+    private static final java.lang.String f

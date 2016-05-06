@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:background="@drawable/action_bar_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/cancel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dip"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="#90fffffe"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="日程"
+            android:textColor="#fffffe"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#fffffe"
+        android:orientation="vertical" >
+        
+        <EditText 
+             android:id="@+id/content_title"
+             android:layout_width="fill_parent"
+       		 android:layout_height="52dip"
+       		 android:layout_marginTop="12dip"
+       		 android:layout_marginLeft="12dip"
+       		 android:layout_marginRight="12dip"
+       		 android:textSize="16sp"
+       		 android:paddingLeft="8dip"
+       		 android:gravity="center_vertical"
+       		 android:background="@drawable/edit_text_bg"
+       		 android:hint="标题"
+            />
+        <EditText 
+             android:id="@+id/plan_content"
+             android:layout_width="fill_parent"
+       		 android:layout_height="52dip"
+       		 android:layout_marginTop="12dip"
+       		 android:layout_marginLeft="12dip"
+       		 android:layout_marginRight="12dip"
+       		 android:textSize="16sp"
+       		 android:paddingLeft="8dip"
+       		 android:gravity="center_vertical"
+       		 android:background="@drawable/edit_text_bg"
+       		 android:hint="日程内容"
+            />
+        <RelativeLayout 
+	               	android:id="@+id/choose_jobType"
+            android:layout_width="fill_parent"
+       		android:layout_height="52dip" 
+       		android:layout_marginTop="16dip"
+       		android:layout_marginLeft="12dip"
+       		android:layout_marginRight="12dip"
+       		android:background="@drawable/shape_top_corner_no_bottom_line"
+            >
+           <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="8dip"
+               android:textSize="16sp"
+               android:text="工作类型"
+               android:gravity="center"
+               android:textColor="#cc000000"
+               />
+           <ImageView
+	               	android:id="@+id/job_type"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_centerInParent="true"
+		            android:layout_margin="10dp"
+		            android:src="@drawable/right" />
+           <TextView
+	               android:id="@+id/jobtype_value"
+	               android:layout_width="wrap_content"
+	               android:layout_height="fill_parent"
+	               android:layout_toLeftOf="@id/job_type"
+	               android:textSize="14sp"
+	               android:text="工作"
+	               android:gravity="center"
+	               android:textColor="#80000000"
+	               />
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/choose_begTime"
+            android:layout_width="fill_parent"
+       		android:layout_height="52dip" 
+       		android:layout_marginLeft="12dip"
+       		android:layout_marginRight="12dip"
+       		android:background="@drawable/shape_no_corner_without_bottom"
+            >
+           <TextView 
+               
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="8dip"
+               android:textSize="16sp"
+               android:text="开始时间"
+               android:gravity="center"
+               android:textColor="#cc000000"
+               />
+           <ImageView
+              	android:id="@+id/begTime"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerInParent="true"
+	            android:layout_margin="10dp"
+	            android:src="@drawable/right" />
+           <TextView 
+                android:id="@+id/plan_beg_time"
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_toLeftOf="@id/begTime"
+               android:textSize="14sp"
+               android:text="2015-04-30 17:30"
+               android:gravity="center"
+               android:textColor="#80000000"
+               />
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/choose_endTime"
+            android:layout_width="fill_parent"
+       		android:layout_height="52dip" 
+       		android:layout_marginLeft="12dip"
+       		android:layout_marginRight="12dip"
+       		android:background="@drawable/shape_no_corner_without_bottom"
+            >
+           <TextView 
+               
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="8dip"
+               android:textSize="16sp"
+               android:text="结束时间"
+               android:gravity="center"
+               android:textColor="#cc000000"
+               />
+           <ImageView
+              	android:id="@+id/endTime"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerInParent="true"
+	            android:layout_margin="10dp"
+	            android:src="@drawable/right" />
+           <TextView 
+                android:id="@+id/plan_end_time"
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_toLeftOf="@id/endTime"
+               android:textSize="14sp"
+               android:text="2015-04-30 17:30"
+               android:gravity="center"
+               android:textColor="#80000000"
+               />
+        </RelativeLayout>
+        
+         <RelativeLayout
+            android:id="@+id/choose_status"
+            android:layout_width="fill_parent"
+       		android:layout_height="52dip" 
+       		android:layout_marginLeft="12dip"
+       		android:layout_marginRight="12dip"
+       		android:background="@drawable/shape_bottom_corner_no_top_line"
+            >
+           <TextView 
+              
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_alignParentLeft="true"
+               android:layout_marginLeft="8dip"
+               android:textSize="16sp"
+               android:text="状态"
+               android:gravity="center"
+               android:textColor="#cc000000"
+               />
+           <ImageView
+              	android:id="@+id/status"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_centerInParent="true"
+	            android:layout_margin="10dp"
+	            android:src="@drawable/right" />
+           <TextView 
+               android:id="@+id/status_value"
+               android:layout_width="wrap_content"
+               android:layout_height="fill_parent"
+               android:layout_toLeftOf="@id/status"
+               android:textSize="14sp"
+               android:text="未完成"
+               android:gravity="center"
+               android:textColor="#80000000"
+               />
+        </RelativeLayout>
+        <TextView
+			android:id="@+id/confirm_tv"
+			android:layout_width="fill_parent"
+			android:layout_height="40dip"
+			android:layout_marginLeft="12dip"
+			android:layout_marginRight="12dip"
+			android:layout_marginTop="24dip"
+			android:textSize="16sp"
+			android:text="提交"
+			android:background="@drawable/edit_text_bg"
+			android:gravity="center"
+			android:textColor="#cc000000"/>
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/activity_update_schedule.xml -->

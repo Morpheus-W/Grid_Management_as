@@ -1,0 +1,97 @@
+package com.cn7782.management.android.activity.adapter;
+
+import java.util.List;
+import com.cn7782.management.R;
+import com.cn7782.management.android.activity.bean.MessageBean;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MessageAdapter extends BaseAdapter {
+	private List<MessageBean> mlist;
+	private Context mcontext;
+
+	public MessageAdapter(Context context, List<MessageBean> list) {
+		this.mlist = list;
+		this.mcontext = context;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return mlist.size();
+	}
+
+	@Override
+	public Object getItem(int position) {
+		// TODO Auto-generated method stub
+		return mlist.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return position;
+	}
+
+	public void setdata(List<MessageBean> list) {
+		this.mlist = list;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		ViewHolder holder = null;
+		if (convertView == null) {
+			holder = new ViewHolder();
+			final LayoutInflater inflater = LayoutInflater.from(mcontext);
+			convertView = inflater.inflate(R.layout.msg_listview, null);
+
+			holder.title = (TextView) convertView
+					.findViewById(R.id.msg_title);
+			holder.content = (TextView) convertView
+					.findViewById(R.id.msg_content);
+			holder.time = (TextView) convertView.findViewById(R.id.log_time);
+			holder.look = (ImageView) convertView.findViewById(R.id.msg_look);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder) convertView.getTag();
+		}
+
+		holder.title.setText(mlist.get(position).getSendName());
+		holder.content.setText(ToDBC(mlist.get(position).getContent()));
+		holder.time.setText(mlist.get(position).getLogTime());
+		if(mlist.get(position).getIsRead()==1){
+			holder.look.setBackgroundResource(R.drawable.look);
+		}else{
+			holder.look.setBackgroundResource(R.drawable.unlook2);
+			
+		}
+		return convertView;
+	}
+
+
+	class ViewHolder {
+		public TextView title, content,  time;
+		public ImageView look;
+	}
+
+	// 将textview中的字符全角化
+	public String ToDBC(String input) {
+		char[] c = input.toCharArray();
+		for (int i = 0; i < c.length; i++) {
+			if (c[i] == 12288) {
+				c[i] = (char) 32;
+				continue;
+			}
+			if (c[i] > 65280 && c[i] < 65375)
+				c[i] = (char) (c[i] - 65248);
+		}
+		return new String(c);
+	}
+}

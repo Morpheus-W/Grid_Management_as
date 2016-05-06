@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@color/pressed_purple" />
+    <item android:state_pressed="false" android:drawable="@color/main_purple" />
+</selector><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/drawable/lay_purple.xml -->

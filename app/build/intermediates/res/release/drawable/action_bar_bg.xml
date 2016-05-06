@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- F24949 -->
+    <solid android:color="#26b6f9"/>
+    <corners android:topLeftRadius="5dip" android:topRightRadius="5dip" android:bottomLeftRadius="0dip" android:bottomRightRadius="0dip"></corners>
+
+</shape>
+<!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/drawable/action_bar_bg.xml -->

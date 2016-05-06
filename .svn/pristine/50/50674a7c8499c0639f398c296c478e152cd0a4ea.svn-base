@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dip"
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="24dip"
+        android:layout_marginBottom="24dip"
+        android:text="日程状态"
+        android:textStyle="bold"
+        android:textColor="#cc000000"
+        android:textSize="16sp" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#20000000" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/unfinish"
+            android:layout_width="fill_parent"
+            android:layout_height="48dip"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="未完成"
+            android:textColor="#cc000000"
+            android:textSize="16sp" />
+
+		<View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#20000000" />
+        <TextView
+            android:id="@+id/finish"
+            android:layout_width="fill_parent"
+            android:layout_height="48dip"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="已完成"
+            android:textColor="#cc000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/status_dialog_layout.xml -->

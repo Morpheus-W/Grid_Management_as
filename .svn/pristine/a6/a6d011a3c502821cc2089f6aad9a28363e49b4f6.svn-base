@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@drawable/login_back"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:text="湖南省宜章政法委"
+            android:shadowColor="#cc000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:shadowColor="#cc000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="综治巡防管理系统"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/twenty_dip"
+            android:background="@drawable/login_submit_layout"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:src="@drawable/login_name" />
+
+                <TextView
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="@dimen/five_dip"
+                    android:layout_marginTop="@dimen/five_dip"
+                    android:background="#9dabb2" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:background="@null"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:gravity="center_vertical"
+                    android:maxLength="19"
+                    
+                    android:singleLine="true"
+                    android:textColor="@color/login_color"
+                    android:textColorHint="@color/login_color"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#9dabb2" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:src="@drawable/login_password" />
+
+                <TextView
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="@dimen/five_dip"
+                    android:layout_marginTop="@dimen/five_dip"
+                    android:background="#9dabb2" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:background="@null"
+                    android:digits="@string/login_name_digits"
+                    android:gravity="center_vertical"
+                    android:maxLength="19"
+                    android:password="true"
+                    
+                    android:singleLine="true"
+                    android:textColor="@color/login_color"
+                    android:textColorHint="@color/login_color"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/twenty_dip"
+            android:layout_marginRight="@dimen/twenty_dip"
+            android:layout_marginTop="@dimen/twenty_dip"
+            android:background="@drawable/btn_login"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ten_dip"
+                android:layout_marginTop="@dimen/ten_dip"
+                android:text="@string/login_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_button_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/activity_login.xml -->

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_color" >
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="描述选择"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ten_dip"
+        android:gravity="center"
+        android:text="最近记录"
+        android:textColor="@color/ampm_text_color"
+        android:textSize="@dimen/title_size" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <ListView
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+              android:layout_marginTop="@dimen/five_dip"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginLeft="@dimen/ten_dip"
+              android:layout_marginRight="@dimen/five_dip"
+            android:layout_weight="3"
+            android:background="@drawable/submit"
+            android:gravity="center|left" >
+
+            <EditText
+                android:id="@+id/notice_edit_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/five_dip"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="输入事件描述" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/notice_submit"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+             android:layout_marginLeft="@dimen/five_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:layout_marginBottom="@dimen/five_dip"
+            android:layout_marginRight="@dimen/ten_dip"
+            android:layout_weight="1"
+            android:background="@drawable/submit"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确认"
+                android:textColor="@color/mark_text"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/activity_description.xml -->

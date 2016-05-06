@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="3dp" />
+
+    <solid android:color="#dcdddd" />
+
+</shape><!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/src/main/res/drawable/ease_timestampe_bg.xml -->

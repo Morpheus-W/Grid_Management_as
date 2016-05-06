@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/ease_search_clear_pressed" />
+    <item android:drawable="@drawable/ease_search_clear_normal" />
+</selector><!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/src/main/res/drawable/ease_search_clear.xml --><!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/build/intermediates/bundles/debug/res/drawable/ease_search_clear.xml -->

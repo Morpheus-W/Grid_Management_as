@@ -1,0 +1,796 @@
+package com.cn7782.management.android.activity;
+
+import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolylineOptions;
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.CoordinateConverter;
+import com.baidu.mapapi.utils.CoordinateConverter.CoordType;
+import com.cn7782.management.R;
+import com.cn7782.management.android.BaseActivity;
+import com.cn7782.management.android.BaseApplication;
+import com.cn7782.management.android.activity.bean.InfoBean;
+import com.cn7782.management.android.activity.bean.LocationBean;
+import com.cn7782.management.android.activity.service.PositioningService;
+import com.cn7782.management.android.activity.service.PositioningService.MsgBind;
+import com.cn7782.management.android.constants.GlobalConstant;
+import com.cn7782.management.android.constants.PreferenceConstant;
+import com.cn7782.management.android.db.DBHelper;
+import com.cn7782.management.config.ActionUrl;
+import com.cn7782.management.http.HttpClient;
+import com.cn7782.management.http.MyAsyncHttpResponseHandler;
+import com.cn7782.management.util.ActivityUtil;
+import com.cn7782.management.util.PictureUtil;
+import com.cn7782.management.util.SharedPreferenceUtil;
+import com.cn7782.management.util.TimeUtil;
+import com.cn7782.management.util.TrackSumbitUtil;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PatrolingActivity extends BaseActivity implements OnClickListener {
+	private int secNum = 0;// 已经开始的秒数
+	private DBHelper dp;
+	private MapView mMapView;
+	private BaiduMap mBaiduMap;
+	private List<LatLng> pts = new ArrayList<LatLng>();
+	private List<LocationBean> mlist;
+	private TextView textTime, textDistance;
+	private double distanceLong = 0.0;
+	// 重启或者暂停定位发送坐标标示
+	public static final String SERVICEIND = "com.cn7782.set";
+	public static final int START = 1001;
+	public static final int STOP = 1002;
+	public static final int DESTROY = 1003;
+	// 表名称
+	private String tablename = "";
+	public Cursor cursor;
+	private BaseApplication base;
+	private String time = "";
+	private String content = "";
+
+	// 头像布局
+	private LinearLayout mAddPhotoLayout;
+	private List<InfoBean> list;
+	// 初始化滑动下标的宽
+	private int indicatorWidth;
+	private BitmapDescriptor bdA = BitmapDescriptorFactory
+			.fromResource(R.drawable.point);
+	// 记录走路路长和开车路长
+	private int walking_road, driving_road;
+	// 记录走路时长和开车时长
+	private int driving_dur, walking_dur;
+	//发送起始位置，终点位置
+	private String start_point = "", end_point = "";
+	public static final int ISPATROLING = 1234;
+	// 事件编号
+	private String event_id = "";
+	// 最后的时间
+	private String endtime = "";
+	// 没有GPS提醒
+	private LinearLayout first_tip;
+	private ArrayList<LocationBean> locations = new ArrayList<LocationBean>(); 
+	// onResume调用重新画线时锁正
+	private boolean locked = true;
+	private CoordinateConverter converter = new CoordinateConverter();
+	private Handler mHandler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case 0:
+				break;
+			case 1:
+				if(PositioningService.mBound){
+					secNum = msg.arg1;
+					distanceLong = msg.arg2;
+					textTime.setText(TimeUtil.formatTimeTextDisplay(secNum));
+					textDistance.setText(msg.arg2+"");
+				}
+				break;
+			case 2:
+				if(PositioningService.mBound){
+					base.setIsLocation(5);
+					Bundle data = msg.getData();
+					locations =  data.getParcelableArrayList("locations");
+					if(locations != null && locations.size()>0){
+						//记录最后的提交时间
+						endtime = locations.get(locations.size()-1).getTime();
+						drawOverlay(locations);
+					}
+				}
+				break;
+			}
+		};
+	};
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		setContentView(R.layout.activity_patroling2);
+
+		initView();
+
+		Intent service = new Intent(this, PositioningService.class);
+		//开启服务，常驻
+		startService(service);
+		//绑定服务，更新UI
+		bindService(service, sc, Context.BIND_AUTO_CREATE);
+	}
+
+	private void initView() {
+		//返回监听
+		findViewById(R.id.title_back).setOnClickListener(this);
+		
+		base = BaseApplication.getInstance();
+		dp = new DBHelper(this);
+		
+		String issecond = getIntent().getStringExtra("issecond");
+		time = getIntent().getStringExtra("add_time");
+		content = getIntent().getStringExtra("add_content");
+
+		mAddPhotoLayout = (LinearLayout) findViewById(R.id.attachment_list);
+		
+		first_tip = (LinearLayout) findViewById(R.id.first_gps_tip);
+		mMapView = (MapView) findViewById(R.id.bmapView);
+		mBaiduMap = mMapView.getMap();
+		mMapView.showZoomControls(false);
+		mMapView.showScaleControl(false);
+		
+		//设定中心点坐标 
+		LatLng cenpt = new LatLng(25.405672,112.955142); 
+		//定义地图状态
+		MapStatus mMapStatus = new MapStatus.Builder()
+		.target(cenpt)
+		.zoom(18)
+		.build();
+		//定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+		MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
+		//改变地图状态
+		mBaiduMap.setMapStatus(mMapStatusUpdate);
+		
+		textTime = (TextView) findViewById(R.id.timer_text);
+		textDistance = (TextView) findViewById(R.id.distance_text);
+		findViewById(R.id.add_date).setOnClickListener(this);
+		findViewById(R.id.sure).setOnClickListener(this);
+		findViewById(R.id.cancel).setOnClickListener(this);
+
+		if (issecond == null) {
+			//判断当前是否已开始巡防
+			cursor = dp.query("SELECT * FROM " + DBHelper.TABLENAME
+					+ " WHERE Artificial = 5", null);
+			if(cursor.getCount() == 0){
+				SimpleDateFormat aDateFormat = new SimpleDateFormat(
+						"yyyyMMddHHmmss");
+				tablename = "e" + aDateFormat.format(new java.util.Date());
+				dp.creatNewTable(tablename);
+				dp.insert(tablename, "1", "", content, time, "", "");
+				SharedPreferenceUtil
+				.modify(PreferenceConstant.MARK_ID_TABLE,
+						PreferenceConstant.TIME,
+						time,
+						PatrolingActivity.this);
+				SharedPreferenceUtil
+				.modify(PreferenceConstant.MARK_ID_TABLE,
+						PreferenceConstant.CONTENT,
+						content,
+						PatrolingActivity.this);
+			}else{
+				cursor.moveToPosition(0);
+				String mtablename = cursor.getString(0);
+				tablename = mtablename;
+				DrawAllOverlay();
+			}
+			
+		} else {
+			cursor = dp.query("SELECT * FROM " + DBHelper.TABLENAME
+					+ " WHERE Artificial = 1", null);
+			if (cursor.getCount() == 0){
+					return;
+			}
+			cursor.moveToPosition(0);
+			String mtablename = cursor.getString(0);
+			tablename = mtablename;
+			
+			DrawAllOverlay();
+		}
+		getdata();
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO 触发按钮
+		switch (v.getId()) {
+
+		case R.id.add_date:
+			Intent intent = new Intent(PatrolingActivity.this,
+					EventReportActivity.class);
+			intent.putExtra("isPatroling", "yes");
+			startActivityForResult(intent, 1);
+			break;
+		case R.id.sure:
+			showCoder();
+			break;
+		case R.id.title_back:
+			//修改为能返回，返回前修改状态
+			//如果仍在监听，则修改表字段
+			if(5 == base.getIsLocation()){
+				dp.updateTable(5, tablename);
+			}else{
+				dp.dropTable(tablename);
+				dp.deleteTable(tablename);
+			}
+			finish();
+			break;
+		case R.id.cancel:
+			AlertDialog.Builder alert = new AlertDialog.Builder(this);
+			alert.setTitle(getString(R.string.isCancelWalk));
+			alert.setPositiveButton("确定",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							dp.dropTable(tablename);
+							dp.deleteTable(tablename);
+							dialog.dismiss();
+							//关闭监听
+							base.setIsLocation(3);
+							finish();
+						}
+					});
+			alert.setNegativeButton("点错了",
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							dialog.dismiss();
+						}
+					});
+			alert.create().show();
+
+			break;
+		}
+	}
+
+	/****
+	 * 恢复所有轨迹
+	 * 
+	 * @param
+	 */
+	private void DrawAllOverlay() {
+		if (first_tip.getVisibility() == View.VISIBLE) {
+			first_tip.setVisibility(View.GONE);
+		}
+		mBaiduMap.clear();
+		locked = false;
+		List<LatLng> pts = new ArrayList<LatLng>();
+		List<LatLng> length = new ArrayList<LatLng>();
+		cursor = dp.query("SELECT * FROM " + tablename, null);
+		if (cursor.getCount() == 0)
+			return;
+		double speedlist[] = new double[cursor.getCount()];
+		converter.from(CoordType.GPS);
+		for (int i = 0; i < cursor.getCount(); i++) {
+			cursor.moveToPosition(i);
+			double speed = cursor.getDouble(2);
+			double Latitude = cursor.getDouble(3);
+			double Longitude = cursor.getDouble(4);
+			LatLng pt = new LatLng(Latitude, Longitude);
+			speedlist[i] = speed;
+			// sourceLatLng待转换坐标
+			converter.coord(pt);
+			LatLng desLatLng = converter.convert();
+			pts.add(desLatLng);
+			length.add(desLatLng);
+			if (pts.size() > 4) {
+				int colors;
+				if (speed > GlobalConstant.DRIVESPEED) {
+					// 开车
+					colors = getResources().getColor(R.color.red_text);
+				} else {
+					// 步行
+					colors = getResources().getColor(R.color.blue);
+				}
+				OverlayOptions ooPolygon = new PolylineOptions().width(5)
+						.color(colors).points(pts);
+				mBaiduMap.addOverlay(ooPolygon);
+				pts.clear();
+			}
+		}
+		// 设定中心点坐标
+		// LatLng cenpt = new LatLng(endLatitude, endLongitude);
+		// 定义地图状态
+		MapStatus mMapStatus = new MapStatus.Builder()
+				.target(length.get(length.size() - 1)).zoom(18).build();
+		// 定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+		MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory
+				.newMapStatus(mMapStatus);
+		// 改变地图状态
+		mBaiduMap.setMapStatus(mMapStatusUpdate);
+		pts = null;
+		length = null;
+		locked = true;
+	}
+
+	/****
+	 * 即时画轨迹
+	 * @param
+	 */
+	private void drawOverlay(List<LocationBean> locations) {
+
+		if (first_tip.getVisibility() == View.VISIBLE) {
+			first_tip.setVisibility(View.GONE);
+		}
+		if (!locked)
+			return;
+		converter.from(CoordType.GPS);
+		LatLng pt = null;
+		LatLng desLatLng = null;
+		Double speed = 0.0;
+		for(LocationBean loc : locations){
+			Double latitude = loc.getLatitude();
+			Double longitude = loc.getLongitude();
+			speed = loc.getSpeed();
+			pt = new LatLng(latitude, longitude);
+			converter.coord(pt);
+			// 转换坐标
+			desLatLng = converter.convert();
+			pts.add(desLatLng);
+		}
+		int colors;
+		if (speed >= GlobalConstant.DRIVESPEED) {
+			// 开车
+			colors = getResources().getColor(R.color.red_text);
+		} else {
+			// 步行
+			colors = getResources().getColor(R.color.blue);
+		}
+		OverlayOptions ooPolygon = new PolylineOptions().width(5)
+				.color(colors).points(pts);
+		mBaiduMap.addOverlay(ooPolygon);
+		//计算距离放入服务中
+//		countDiatance(pts, speed);
+		// 设定中心点坐标
+		// 定义地图状态
+		MapStatus mMapStatus = new MapStatus.Builder().target(desLatLng)
+				.zoom(18).build();
+		// 定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+		MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory
+				.newMapStatus(mMapStatus);
+		// 改变地图状态
+		mBaiduMap.setMapStatus(mMapStatusUpdate);
+		pts.clear();
+		pts.add(desLatLng);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		mMapView.onPause();
+		Intent intent = new Intent();
+		intent.setAction(SERVICEIND);
+		intent.putExtra("working", STOP);
+		sendBroadcast(intent);
+	}
+
+	@Override
+	protected void onResume() {
+		mMapView.onResume();
+		super.onResume();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		unbindService(sc);
+		PositioningService.mBound = false;
+		//如果仍在监听，则修改表字段
+		if(5 == base.getIsLocation()){
+			dp.updateTable(5, tablename);
+		}else{
+//			gps.setIsLocation(true);
+			Intent service = new Intent(this, PositioningService.class);
+			stopService(service);
+		}
+		if(dp != null)
+			dp.close();
+		if(cursor != null)
+			cursor.close();
+		if (mMapView != null)
+			mMapView.onDestroy();
+		
+		super.onDestroy();
+	}
+
+	public String list2Json(List<LocationBean> list) {
+		String grid_id = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.GRID_ID,
+				PatrolingActivity.this);
+		String startStrTime = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.TIME,
+				PatrolingActivity.this);
+		String remark = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.CONTENT,
+				PatrolingActivity.this);
+
+		String[] result = TrackSumbitUtil.getParamStr(list);
+
+		StringBuffer paramsResult = new StringBuffer("{");
+
+		paramsResult.append("'startStrTime':"+ "'" + startStrTime + "',");
+		paramsResult.append("'endStrTime':"+ "'" + endtime + "',");
+		paramsResult.append("'start_place':"+ "'" + start_point + "',");
+		paramsResult.append("'end_place':"+ "'" + end_point + "',");
+		paramsResult.append("'length':"+ "'" + result[1] + "',");
+		paramsResult.append("'duration':"+ "'" + secNum + "',");
+		paramsResult.append("'remark':"+ "'" + remark + "',");
+		paramsResult.append("'walking_road':"+ "'" + walking_road + "',");
+		paramsResult.append("'walking_dur':"+ "'" + walking_dur + "',");
+		paramsResult.append("'driving_road':"+ "'" + driving_road + "',");
+		paramsResult.append("'driving_dur':"+ "'" + driving_dur + "',");
+		paramsResult.append("'grid_id':"+ "'" + grid_id + "',");
+		paramsResult.append("'event_id':"+ "'" + event_id + "',");
+
+		String str = result[0];
+		str = str.replaceAll("\"", "'");
+		paramsResult.append("'pathList':"+ str);
+		paramsResult.append("}");
+		
+		Log.i("record", paramsResult.toString());
+		return paramsResult.toString();
+	}
+
+	private void updata() {
+		if (mlist == null)
+			mlist = new ArrayList<LocationBean>();
+		mlist.clear();
+		cursor = dp.query("SELECT * FROM " + tablename, null);
+		LocationBean a = null;
+		for (int i = 0; i < cursor.getCount(); i++) {
+			cursor.moveToPosition(i);
+			String time = cursor.getString(1);
+			double speed = cursor.getDouble(2);
+			double Latitude = cursor.getDouble(3);
+			double Longitude = cursor.getDouble(4);
+			int pathType = cursor.getInt(5);
+			a = new LocationBean();
+			a.setLatitude(Latitude);
+			a.setLongitude(Longitude);
+			a.setSpeed(speed);
+			a.setTime(time);
+			a.setPathType(pathType);
+			if(i == 0){
+				start_point = Longitude  + "," + Latitude;
+			}
+			mlist.add(a);
+		}
+		end_point = a.getLongitude() +","+a.getLatitude();
+		
+		String json = list2Json(mlist);
+		RequestParams param = new RequestParams();
+		String tokenId = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+				PatrolingActivity.this);
+		param.put("token_id", tokenId);
+		param.put("json", json);
+		HttpClient.post(PatrolingActivity.this, ActionUrl.TRAFECTORY, param,
+				new MyAsyncHttpResponseHandler(PatrolingActivity.this,
+						"上传中,请稍后...") {
+					public void onSuccess(String results) {
+						super.onSuccess(results);
+						try {
+							JSONObject jsonObject = new JSONObject(results);
+							if (jsonObject.has("msg")) {
+								String msg = jsonObject.isNull("msg") ? ""
+										: jsonObject.getString("msg");
+								if (msg.equals("保存成功")) {
+									Toast.makeText(PatrolingActivity.this,
+											"上传成功了", Toast.LENGTH_SHORT).show();
+									dp.dropTable(tablename);
+									dp.deleteTable(tablename);
+								} else {
+									Toast.makeText(PatrolingActivity.this,
+											"上传失败", Toast.LENGTH_SHORT).show();
+								}
+							}
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+
+					public void onFailure(Throwable arg0, String tipInfo) {
+						super.onFailure(arg0, tipInfo);
+					}
+				});
+	}
+
+	private void showCoder() {
+		if (ActivityUtil.isNetworkAvailable(this)) {
+			showAvailableDialog();
+		} else {
+			showDialog();
+		}
+	}
+
+	private void showDialog() {
+		//加入未记录任何轨迹点则不能提交判断
+		if(!dp.isRecordExists(tablename)){
+			Toast.makeText(PatrolingActivity.this,"当前还没有记录到轨迹点！不能提交！", Toast.LENGTH_LONG).show();
+			return ;
+		}
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("当前网络不可用");
+		final String[] items = new String[] { "离线保存数据", "取消" };
+		builder.setSingleChoiceItems(items, 0,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						if (which == 0) {
+							Toast.makeText(PatrolingActivity.this, "保存成功了",
+									Toast.LENGTH_SHORT).show();
+							finish();
+							dp.updateEndTime(tablename, endtime);
+							//补充更新状态值
+							dp.updateTable();
+							//补充更新时间值
+							dp.updataDuration(tablename, secNum);
+							dialog.dismiss();
+							base.setIsLocation(2);
+						} else {
+							dialog.dismiss();
+						}
+					}
+				});
+		builder.create();
+		builder.show();
+	}
+
+	private void showAvailableDialog() {
+		//加入未记录任何轨迹点则不能提交判断
+		if(!dp.isRecordExists(tablename)){
+			Toast.makeText(PatrolingActivity.this,"当前还没有记录到轨迹点！不能提交！", Toast.LENGTH_LONG).show();
+			return ;
+		}
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("当前网络可用");
+		final String[] items = new String[] { "上传数据", "离线保存数据", "取消" };
+		builder.setSingleChoiceItems(items, 0,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						if (which == 0) {
+							updata();
+							Intent intent = new Intent(PatrolingActivity.this,PatrolActivity.class);
+							startActivity(intent);
+							dialog.dismiss();
+							base.setIsLocation(3);
+						} else if (which == 1) {
+							Toast.makeText(PatrolingActivity.this, "保存成功了",
+									Toast.LENGTH_SHORT).show();
+							finish();
+							dialog.dismiss();
+							dp.updateEndTime(tablename, endtime);
+							dp.updateTable();
+							//补充更新时间值
+							dp.updataDuration(tablename, secNum);
+							base.setIsLocation(2);
+						} else {
+							dialog.dismiss();
+						}
+					}
+				});
+		builder.create();
+		builder.show();
+	}
+	
+	private void getdata() {
+		String tokenId = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+				PatrolingActivity.this);
+		RequestParams param = new RequestParams();
+		param.put("token_id", tokenId);
+		HttpClient
+				.post(PatrolingActivity.this, ActionUrl.HITTORY, param,
+						new MyAsyncHttpResponseHandler(PatrolingActivity.this,
+								"请稍后...") {
+							public void onSuccess(String results) {
+								super.onSuccess(results);
+								try {
+									JSONObject jsonObject = new JSONObject(
+											results);
+									if (jsonObject.has("msg")) {
+										String msg = jsonObject.isNull("msg") ? ""
+												: jsonObject.getString("msg");
+										if (msg.equals("查询成功")) {
+											JSONArray jo1 = jsonObject
+													.getJSONArray("trajectoryPoint");
+											if (list == null)
+												list = new ArrayList<InfoBean>();
+											list.clear();
+											for (int i = 0; i < jo1.length(); i++) {
+												JSONObject json = jo1
+														.getJSONObject(i);
+												InfoBean a = new InfoBean();
+												a.setTime(json
+														.isNull("log_time") ? ""
+														: json.getString("log_time"));
+												a.setWayId(json.isNull("way_id") ? ""
+														: json.getString("way_id"));
+												a.setLatitude(json
+														.isNull("latitude") ? 0.0
+														: json.getDouble("latitude"));
+												a.setLongitude(json
+														.isNull("longitude") ? 0.0
+														: json.getDouble("longitude"));
+												a.setName(json
+														.isNull("user_name") ? ""
+														: json.getString("user_name"));
+												a.setUrl(json
+														.isNull("user_url") ? ""
+														: json.getString("user_url"));
+												a.setAddress(json
+														.isNull("adress") ? ""
+														: json.getString("adress"));
+												list.add(a);
+											}
+											initNavigationHSV();
+										}
+
+									}
+								} catch (JSONException e) {
+
+								}
+							}
+						});
+	}
+	//初始化地图导航
+	private void initNavigationHSV() {
+		mAddPhotoLayout.removeAllViews();
+		WindowManager wm = this.getWindowManager();
+		int width = wm.getDefaultDisplay().getWidth();
+		indicatorWidth = width / 5;
+		if (list == null)
+			return;
+
+		for (int i = 0; i < list.size(); i++) {
+			LayoutInflater mInflater = (LayoutInflater) this
+					.getSystemService(LAYOUT_INFLATER_SERVICE);
+			final View rb = (View) mInflater
+					.inflate(R.layout.head_layout, null);
+			rb.setId(i);
+			double Latitude = list.get(i).getLatitude();
+			double Longitude = list.get(i).getLongitude();
+			LatLng pt = new LatLng(Latitude, Longitude);
+			rb.setTag(pt);
+			TextView rbt;
+			final ImageView rbb;
+			rbb = (ImageView) rb.findViewById(R.id.head_iamge);
+			rbt = (TextView) rb.findViewById(R.id.head_text);
+			rbt.setText(list.get(i).getName());
+
+			rb.setLayoutParams(new LayoutParams(indicatorWidth,
+					LayoutParams.MATCH_PARENT));
+			final InfoBean id = list.get(i);
+			rb.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// 修改地图覆盖物，即根据选中的人物图片更改坐标定位
+					changeOverlay((LatLng) rb.getTag(), id);
+				}
+			});
+			String ss = list.get(i).getUrl();
+			if(ss != null && !"".equals(ss)){
+				PictureUtil.ShowPicture(rbb, PatrolingActivity.this, ss);
+			}
+			//逐个添加用户视图，并在视图中设置点击事件
+			mAddPhotoLayout.addView(rb);
+		}
+
+	}
+
+	private void changeOverlay(final LatLng str, final InfoBean bean) {
+		if (bean == null) {
+			return;
+		}
+
+		OverlayOptions ooA = new MarkerOptions().position(str).icon(bdA)
+				.zIndex(9).draggable(true);
+		MapStatus mMapStatus = new MapStatus.Builder().target(str).zoom(18)
+				.build();
+		// 定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+		MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory
+				.newMapStatus(mMapStatus);
+		// 改变地图状态
+		mBaiduMap.setMapStatus(mMapStatusUpdate);
+		mBaiduMap.addOverlay(ooA);
+
+		mBaiduMap.setOnMarkerClickListener(new OnMarkerClickListener() {
+
+			@Override
+			public boolean onMarkerClick(Marker arg0) {
+
+				return false;
+			}
+		});
+
+	}
+
+	/** 退出提醒 */
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			//修改为能返回，返回前修改状态
+			//如果仍在监听，则修改表字段
+			if(5 == base.getIsLocation()){
+				dp.updateTable(5, tablename);
+			}else{
+				dp.dropTable(tablename);
+				dp.deleteTable(tablename);
+			}
+		}
+		return true;
+	}
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (resultCode != RESULT_OK) {
+			switch (resultCode) {
+			case ISPATROLING:
+				Bundle b = data.getExtras();
+				event_id = event_id + b.getString("event_id") + ",";
+				dp.updataEventId(tablename, event_id);
+			}
+		}
+	}
+	private PositioningService mService ;
+	 //在客户端覆写onServiceConnected方法,当服务绑定成功会调用此回调函数  
+    private ServiceConnection sc = new ServiceConnection() {  
+            @Override  
+            public void onServiceConnected(ComponentName name, IBinder service) { 
+            	PositioningService.MsgBind msgBind = (MsgBind) service;  
+                mService = msgBind.getService(); 
+                mService.initHandler(mHandler);
+                mService.initService(PatrolingActivity.this,dp, tablename);
+//                mService.tracklocations();
+                mService.initTimer();
+            }
+            
+			@Override
+			public void onServiceDisconnected(ComponentName name) {
+			}  
+        };
+}

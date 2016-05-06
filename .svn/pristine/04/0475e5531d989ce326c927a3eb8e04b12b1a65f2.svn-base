@@ -1,0 +1,32 @@
+Applications Memory Usage (kB):
+Uptime: 60230393 Realtime: 104810562
+
+** MEMINFO in pid 2759 [com.cn7782.management.activity] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap        0        0        0        0    43480    21908      703
+  Dalvik Heap    18819    18728        0        0    24972    17657     7315
+ Dalvik Other     2661     2560        0        0                           
+        Stack       32       32        0        0                           
+    Other dev        5        0        4        0                           
+     .so mmap     1615      904      128        0                           
+    .apk mmap      126        0       32        0                           
+    .ttf mmap      415        0      152        0                           
+    .dex mmap     2024       28      736        0                           
+   Other mmap       14        8        0        0                           
+      Unknown    13379    13364        0        0                           
+        TOTAL    39090    35624     1052        0    68452    39565     8018
+ 
+ Objects
+               Views:      781         ViewRootImpl:        3
+         AppContexts:        7           Activities:        4
+              Assets:        3        AssetManagers:        3
+       Local Binders:       37        Proxy Binders:       30
+    Death Recipients:        2
+     OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 

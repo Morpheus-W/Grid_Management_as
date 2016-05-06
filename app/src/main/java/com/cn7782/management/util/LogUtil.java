@@ -1,0 +1,134 @@
+package com.cn7782.management.util;
+
+import android.util.Log;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class LogUtil {
+	
+	
+	public static boolean logoff = false; // Log switch open, development,
+											// released when closed(LogCat)
+	public static int level = Log.ERROR; // Write file level
+
+	/**
+	 * Custom Log output style
+	 * 
+	 * @param type
+	 *            Log type
+	 * @param tag
+	 *            TAG
+	 * @param msg
+	 *            Log message
+	 */
+	public static void trace(int type, String tag, String msg) {
+		// LogCat
+		if (logoff) {
+			switch (type) {
+			case Log.VERBOSE:
+				Log.v(tag, msg);
+				break;
+			case Log.DEBUG:
+				Log.d(tag, msg);
+				break;
+			case Log.INFO:
+				Log.i(tag, msg);
+				break;
+			case Log.WARN:
+				Log.w(tag, msg);
+				break;
+			case Log.ERROR:
+				Log.e(tag, msg);
+				break;
+			}
+		}
+		// Write to file
+		if (type >= level) {
+//			writeLog(type, msg);
+		}
+	}
+
+	public static void v(String tag, String msg) {
+		if (logoff) {
+			Log.v(tag, msg);
+		}
+	}
+
+	public static void w(String tag, String msg,Throwable e) {
+		if (logoff) {
+			Log.w(tag, msg,e);
+		}
+	}
+
+	public static void e(String tag, String msg) {
+		if (logoff) {
+			Log.e(tag, msg);
+		}
+	}
+
+	public static void d(String tag, String msg) {
+		if (logoff) {
+			Log.d(tag, msg);
+		}
+	}
+
+	/**
+	 * Write log
+	 * 
+	 * @param logDir
+	 *            Log path to save
+	 * @param fileName
+	 * @param msg
+	 *            Log content
+	 * @param bool
+	 *            Save as type, false override save, true before file add save
+	 */
+	private static void recordLog(String logDir, String fileName, String msg,
+			boolean bool) {
+		try {
+			createDir(logDir);
+			final File saveFile = new File(new StringBuffer().append(logDir)
+					.append("/").append(fileName).toString());
+			if (!bool && saveFile.exists()) {
+				saveFile.delete();
+				saveFile.createNewFile();
+				final FileOutputStream fos = new FileOutputStream(saveFile,
+						bool);
+				fos.write(msg.getBytes());
+				fos.close();
+			} else if (bool && saveFile.exists()) {
+				final FileOutputStream fos = new FileOutputStream(saveFile,
+						bool);
+				fos.write(msg.getBytes());
+				fos.close();
+			} else if (bool && !saveFile.exists()) {
+				saveFile.createNewFile();
+				final FileOutputStream fos = new FileOutputStream(saveFile,
+						bool);
+				fos.write(msg.getBytes());
+				fos.close();
+			}
+		} catch (IOException e) {
+			recordLog(logDir, fileName, msg, bool);
+		}
+	}
+
+
+	private static String getDateformat(String pattern) {
+		final DateFormat format = new SimpleDateFormat(pattern);
+		return format.format(new Date());
+	}
+
+	private static File createDir(String dir) {
+		final File file = new File(dir);
+		if (!file.exists()) {
+			file.mkdirs();
+		}
+		return file;
+	}
+}

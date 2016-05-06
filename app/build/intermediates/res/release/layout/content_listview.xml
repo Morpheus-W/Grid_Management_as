@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+        <TextView
+            android:layout_marginLeft="15dip"
+            android:textColor="#90000000"
+            android:textSize="17sp"
+            android:id="@+id/shortContent"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip" />
+
+        <TextView
+            android:layout_marginLeft="15dip"
+            android:textSize="15sp"
+            android:textColor="#40000000"
+            android:id="@+id/showDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="25dip" />
+
+</LinearLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/content_listview.xml -->

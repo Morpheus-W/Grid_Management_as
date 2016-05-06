@@ -1,0 +1,178 @@
+package com.cn7782.management.util;
+
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
+
+import java.io.IOException;
+
+public class MedieaPlayerUtil {
+	Context context;
+	MediaPlayer mMediaPlayer = null;
+
+	public MediaPlayer getmMediaPlayer() {
+		return mMediaPlayer;
+	}
+
+	public MedieaPlayerUtil(Context context) {
+
+		this.context = context;
+		mMediaPlayer = new MediaPlayer();
+	}
+
+	/**
+	 * 
+	 * 播放求助音乐
+	 */
+	public void playAlarmRing() {
+
+		Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+		try {
+
+			AssetManager assets = context.getAssets();
+			// mMediaPlayer = create(this, assets.open("alarm.wav"));
+			final AudioManager audioManager = (AudioManager) context
+					.getSystemService(Context.AUDIO_SERVICE);
+			// mMediaPlayer = MediaPlayer.create(context, R.raw.alarm);
+			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+					audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+					1);
+
+			mMediaPlayer.setLooping(true);
+			mMediaPlayer.prepare();
+
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (null != mMediaPlayer) {
+			mMediaPlayer.start();
+
+		}
+	}
+
+	/**
+	 * 停止播放
+	 */
+	public void stopPlay() {
+		if (mMediaPlayer != null) {
+			mMediaPlayer.stop();
+			mMediaPlayer.release();
+			mMediaPlayer = null;
+		}
+	}
+
+	/**
+	 * 
+	 * 播放到达的音乐音乐
+	 */
+	public void playArriveAlarmRing() {
+
+		// playRing(R.raw.alarm);
+
+	}
+
+	public void playRing(int resid) {
+
+		Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+		try {
+
+			AssetManager assets = context.getAssets();
+			// mMediaPlayer = create(this, assets.open("alarm.wav"));
+			final AudioManager audioManager = (AudioManager) context
+					.getSystemService(Context.AUDIO_SERVICE);
+			mMediaPlayer = MediaPlayer.create(context, resid);
+			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+					audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+					1);
+
+			mMediaPlayer.setLooping(false);
+			mMediaPlayer.prepare();
+
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (null != mMediaPlayer) {
+
+			if (mMediaPlayer.isPlaying()) {
+				mMediaPlayer.stop();
+			}
+
+			mMediaPlayer.start();
+
+		}
+	}
+
+	/****
+	 * 
+	 * @param url
+	 */
+	public void playURL(String url) {
+		// 通过Uri解析一个网络地址
+		Uri uri = Uri.parse(url);
+		try {
+			mMediaPlayer.setDataSource(context, uri);
+			mMediaPlayer.prepare();
+			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+			final AudioManager audioManager = (AudioManager) context
+					.getSystemService(Context.AUDIO_SERVICE);
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+					audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+					1);
+
+			mMediaPlayer.setLooping(false);
+//			if (mMediaPlayer.isPlaying()) {
+//				mMediaPlayer.stop();
+//			}
+			mMediaPlayer.start();
+
+		} catch (Exception e) {
+
+		}
+
+	}
+
+	public void playFilepath(String url) {
+		// 通过文件路径
+		try {
+			mMediaPlayer.setDataSource(url);
+			mMediaPlayer.prepare();
+			mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+			final AudioManager audioManager = (AudioManager) context
+					.getSystemService(Context.AUDIO_SERVICE);
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
+					audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+					1);
+
+			mMediaPlayer.setLooping(false);
+
+			if (mMediaPlayer.isPlaying()) {
+				mMediaPlayer.stop();
+			}
+
+			mMediaPlayer.start();
+
+		} catch (Exception e) {
+
+		}
+
+	}
+}

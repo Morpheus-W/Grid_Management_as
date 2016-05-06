@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/ease_chatto_bg_focused" />
+    <item android:drawable="@drawable/ease_chatto_bg_normal" />
+</selector><!-- From: file:/E:/SmartCity/client/Grid_Management_as/easeUI/src/main/res/drawable/ease_chatto_bg.xml --><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/build/intermediates/exploded-aar/Grid_Management_as/easeUI/unspecified/res/drawable/ease_chatto_bg.xml -->

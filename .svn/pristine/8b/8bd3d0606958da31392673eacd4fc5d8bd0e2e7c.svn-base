@@ -1,0 +1,63 @@
+package com.cn7782.management.android.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.text.TextUtils;
+import android.view.Window;
+import android.view.WindowManager;
+
+import com.cn7782.management.R;
+import com.cn7782.management.android.BaseActivity;
+import com.cn7782.management.android.constants.PreferenceConstant;
+import com.cn7782.management.util.SharedPreferenceUtil;
+
+public class WelcomeActivity extends BaseActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		//全屏设置隐藏所有装饰
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_welcome);
+		new CountDownTimer(1000,1000){
+			 
+			@Override
+			public void onTick(long millisUntilFinished) {
+			}
+			@Override
+			public void onFinish() {
+//				isLogin();
+				Intent intent = new Intent(	WelcomeActivity.this,LoginActivity.class);
+				startActivity(intent);
+
+				int VERSION=Integer.parseInt(android.os.Build.VERSION.SDK);
+				if(VERSION >= 5){
+					WelcomeActivity.this.overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
+				}
+				WelcomeActivity.this.finish();
+			}
+		}.start();
+	}
+	public void isLogin(){
+		String name = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.ACCOUNT,
+				WelcomeActivity.this);
+		String pass = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.PASSWORD,
+				WelcomeActivity.this);
+		if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(pass)){
+			Intent intent = new Intent(
+					WelcomeActivity.this,
+					MainActivity.class);
+			startActivity(intent);
+		}else{
+			Intent intent = new Intent(
+					WelcomeActivity.this,
+					LoginActivity.class);
+			startActivity(intent);
+		}
+	}
+}

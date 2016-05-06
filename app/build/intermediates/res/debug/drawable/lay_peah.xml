@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/pressed_peah" android:state_pressed="true"/>
+    <item android:drawable="@color/main_peah" android:state_pressed="false"/>
+
+</selector><!-- From: file:/E:/carpool/projects/Grid_Management_as/app/src/main/res/drawable/lay_peah.xml -->

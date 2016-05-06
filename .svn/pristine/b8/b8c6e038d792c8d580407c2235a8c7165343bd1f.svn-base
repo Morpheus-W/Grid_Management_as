@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-47e5be79b1096df279f6406184839599508c0d96.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.2\d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27\picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\picasso-2.3.2-129daf79aac2b89d04477dd06772606059eeedd9.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-73a78653b6b32018a9181adfafc316b3c3445a02.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\togglebuttonlib.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="199d62cbe8defdfaa94469e5f95b7d0fbe5697ac">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\togglebuttonlib-166c050dc612067c508c03621efa30d5f1f0f681.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\slidingmenu.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="942c0d8b6512d787707afbe8293566c413cdb86a">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\slidingmenu-2e88a893e026805fd4e876d6c0c9f9a4b56449ab.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-a9a6954537b0d72aee844a8eb90aa2e8e013ca4f.jar" />
+    </item>
+    <item
+        jar="E:\Android\as\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-187fc07d6e8ce77b7adbb4ab2ab530bef9b232bb.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\nineoldandroids-2.4.0-2.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\nineoldandroids-2.4.0-2-c6f31f8b20414361aaa985c5685b8808eef2750e.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\BaiduLBS_Android.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="868c060abfa9778e598e631f93f94037edbe8996">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\BaiduLBS_Android-de26ffbd8b2fa8b40db6f377153277831a108f64.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\universal-image-loader-1.9.1.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="296dfb44fbf31397c0306e60cb62e06ca40df07f">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.1-87ec2c8cfe43ceb17667740c26b03561696e7f12.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\umeng_sdk.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="951bead45677ae72cc8611eb93b5eb286f8e986e">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\umeng_sdk-8ad271692851cb9d665bb7bb75a573ec9bb2326a.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\libs\android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.3-0e5f8cbe11169ef67d5cefdaa08b39ac1ce3e131.jar" />
+    </item>
+    <item
+        jar="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\classes-068010ae9593d68eaec6b37a107cf41d07661896.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\SmartCity\android baidu SDK 3.0.3\Grid_Management_as\app\build\intermediates\pre-dexed\debug\gson-2.2.4-752a4694a6e7953de1b9e1ac68ee96a302f761f3.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  -->
+    <color name="login_color">#8c8c8c</color>
+    <color name="white">#ffffff</color>
+    <color name="balck">#000000</color>
+    <color name="background">#fdfdfd</color>
+
+    <!-- 主界面风格颜色 -->
+    <color name="main_blue">#3d98ff</color>
+    <color name="main_blue2">#3DB3FF</color>
+    <color name="main_red">#00be8b</color>
+    <color name="main_green">#5ebe00</color>
+    <color name="main_orange">#ff8a44</color>
+    <color name="main_purple">#c13dff</color>
+    <color name="main_peah">#ff6073</color>
+    <color name="main_yellow">#8A96FF</color>
+    <color name="brey_background">#fcfcfc</color>
+    <!-- 点击后颜色 -->
+    <color name="pressed_blue">#3578cd</color>
+    <color name="pressed_blue2">#24A7FF</color>
+    <color name="pressed_red">#05986f</color>
+    <color name="pressed_green">#4d9706</color>
+    <color name="pressed_orange">#cc6e39</color>
+    <color name="pressed_purple">#9a35cb</color>
+    <color name="pressed_peah">#cb4f5c</color>
+    <color name="pressed_yellow">#707EFF</color>
+    <!-- 数据统计界面颜色 -->
+    <color name="line_color">#e3e5e8</color>
+    <color name="title_color">#26b6f9</color>
+    <color name="listview_color_up">#eff3f6</color>
+    <color name="listview_color_down">#eff3f6</color>
+    <!-- 字体颜色 -->
+    <color name="red_text">#e93300</color>
+    <color name="mark_text">#808fa6</color>
+    <color name="working">#585858</color>
+    <color name="content_title">#3a3a3a</color>
+    <color name="content_text">#939393</color>
+    <color name="main_item_up">#929292</color>
+    <color name="main_item_down">#21bafb</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_orange">#e6892e</color>
+    <!-- 图形颜色 -->
+    <color name="fresh_1">#FFFFB3</color>
+    <color name="fresh_2">#94FF85</color>
+    <color name="fresh_3">#75FFC2</color>
+    <color name="fresh_4">#8FDEFF</color>
+    <color name="fresh_5">#B3B3FF</color>
+    <color name="mono_1">#042D42</color>
+    <color name="mono_2">#0B84C2</color>
+    <color name="mono_3">#075075</color>
+    <color name="mono_4">#57BEF2</color>
+    <color name="mono_5">#326E8C</color>
+    <color name="liberty_1">#CFF8F6</color>
+    <color name="liberty_2">#94D4D4</color>
+    <color name="liberty_3">#88B4BB</color>
+    <color name="liberty_4">#76AEAF</color>
+    <color name="liberty_5">#2A6D82</color>
+    <color name="colorful_1">#C12552</color>
+    <color name="colorful_2">#FF6600</color>
+    <color name="colorful_3">#F5C700</color>
+    <color name="colorful_4">#6A961F</color>
+    <color name="colorful_5">#008885</color>
+    <color name="greens_1">#55FC70</color>
+    <color name="greens_2">#62E24C</color>
+    <color name="greens_3">#ACF960</color>
+    <color name="greens_4">#CBE24C</color>
+    <color name="greens_5">#FCF355</color>
+    <color name="joyful_1">#D9508A</color>
+    <color name="joyful_2">#FE9507</color>
+    <color name="joyful_3">#FEF778</color>
+    <color name="joyful_4">#6AA786</color>
+    <color name="joyful_5">#35C2D1</color>
+    <color name="pastel_1">#405980</color>
+    <color name="pastel_2">#95A57C</color>
+    <color name="pastel_3">#D9B8A2</color>
+    <color name="pastel_4">#BF8686</color>
+    <color name="pastel_5">#B33050</color>
+    <color name="vordiplom_1">#C0FF8C</color>
+    <color name="vordiplom_2">#FFF78C</color>
+    <color name="vordiplom_3">#FFD08C</color>
+    <color name="vordiplom_4">#8CEAFF</color>
+    <color name="vordiplom_5">#FF8C9D</color>
+    <color name="vordiplom_6">#b299f3</color>
+    <!-- 时间选择器颜色 -->
+
+    <color name="circle_background">#f2f2f2</color>
+    <color name="line_background">#cccccc</color>
+    <color name="ampm_text_color">#8c8c8c</color>
+    <color name="done_text_color_normal">#333333</color>
+    <color name="done_text_color_disabled">#CCCCCC</color>
+    <color name="numbers_text_color">#8c8c8c</color>
+    <color name="transparent_black">#7F000000</color>
+    <color name="blue">#33b5e5</color>
+    <color name="darker_blue">#0099CC</color>
+    <color name="date_picker_text_normal">#FF999999</color>
+    <color name="calendar_header">#999999</color>
+    <color name="date_picker_view_animator">#f2f2f2</color>
+    <color name="calendar_selected_date_text">#FFD1D2D4</color>
+	
+    <color name="color_half_alph_black">#aa000000</color>
+    <color name="main_bg">#dbdbdb</color>
+    
+    <color name="focus_circle_bg">#26b6f9</color>
+    <!-- F24949 -->
+    <color name="date_1">#26b6f9</color>
+    <color name="date_2">#40000000</color>
+
+    <color name="albumback">#E1E0DE</color>
+    <color name="black">#000000</color><!--黑色 -->
+
+    <color name="msgback">#e5e5e5</color>
+</resources>

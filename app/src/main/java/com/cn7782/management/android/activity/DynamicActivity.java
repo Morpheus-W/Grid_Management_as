@@ -1,0 +1,340 @@
+package com.cn7782.management.android.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.cn7782.management.R;
+import com.cn7782.management.android.BaseActivity;
+import com.cn7782.management.android.activity.adapter.SearchAdapter;
+import com.cn7782.management.android.activity.bean.NoticeBean;
+import com.cn7782.management.android.constants.PreferenceConstant;
+import com.cn7782.management.config.ActionUrl;
+import com.cn7782.management.http.HttpClient;
+import com.cn7782.management.http.MyAsyncHttpResponseHandler;
+import com.cn7782.management.util.SharedPreferenceUtil;
+import com.cn7782.management.view.PullToRefreshView;
+import com.cn7782.management.view.PullToRefreshView.OnFooterRefreshListener;
+import com.cn7782.management.view.PullToRefreshView.OnHeaderRefreshListener;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DynamicActivity extends BaseActivity {
+
+	private SearchAdapter searchadapter;
+	private int pagecount = 1;
+	private int total = 0;
+	private ListView listview;
+	private List<NoticeBean> list = null;
+	private PullToRefreshView mPullToRefreshView;
+	private OnHeaderRefreshListener mOnHeaderRefreshListener;
+	private OnFooterRefreshListener mOnFooterRefreshListener;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_dynamic);
+
+		initView();
+
+		getdata();
+
+	}
+
+	private void initView() {
+		// 下拉刷新监听
+		mOnHeaderRefreshListener = new OnHeaderRefreshListener() {
+			public void onHeaderRefresh(PullToRefreshView view) {
+				// TODO Auto-generated method stub
+				startRefresh();
+				return;
+			}
+		};
+		// 点击下拉菜单底部的"更多"按钮，加载更多讨论列表
+		mOnFooterRefreshListener = new OnFooterRefreshListener() {
+			@Override
+			public void onFooterRefresh(PullToRefreshView view) {
+				getMoreData();
+				return;
+			}
+		};
+		mPullToRefreshView = (PullToRefreshView) findViewById(R.id.pull_refresh_view);
+		mPullToRefreshView.setOnHeaderRefreshListener(mOnHeaderRefreshListener);
+		mPullToRefreshView.setOnFooterRefreshListener(mOnFooterRefreshListener);
+
+		findViewById(R.id.search_back).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						finish();
+					}
+				});
+
+	}
+
+	// 刷新
+	private void startRefresh() {
+		pagecount = 1;
+		String tokenId = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+				DynamicActivity.this);
+		RequestParams param = new RequestParams();
+		param.put("token_id", tokenId);
+		param.put("pageNo", "" + pagecount);
+		HttpClient.post(DynamicActivity.this, ActionUrl.DYNAMIC_LIST, param,
+				new MyAsyncHttpResponseHandler(DynamicActivity.this, "请稍后...") {
+					public void onSuccess(String results) {
+						super.onSuccess(results);
+
+						try {
+							JSONObject jsonObject = new JSONObject(results);
+							if (jsonObject.has("msg")) {
+								String msg = jsonObject.isNull("msg") ? ""
+										: jsonObject.getString("msg");
+
+								if (msg.equals("查询成功")) {
+									if (list == null)
+										list = new ArrayList<NoticeBean>();
+//									JSONArray jo1 = jsonObject.getJSONArray("list");
+									String data = jsonObject.isNull("data") ? "" : jsonObject.getString("data");
+									JSONObject jo1 = new JSONObject(data);
+									//更新记录总数
+									total = jo1.getInt("count");
+									JSONArray jos1 = jo1.getJSONArray("list");
+									if (list != null)
+										list.clear();
+									for (int i = 0; i < jos1.length(); i++) {
+										JSONObject json = jos1.getJSONObject(i);
+										NoticeBean a = new NoticeBean();
+										a.setContent(json.isNull("content") ? ""
+												: json.getString("content"));
+										a.setId(json.isNull("id") ? "" : json
+												.getString("id"));
+										a.setTime(json.isNull("log_time") ? ""
+												: json.getString("log_time"));
+										a.setTitle(json.isNull("title") ? ""
+												: json.getString("title"));
+										a.setDepartment(json
+												.isNull("department") ? ""
+												: json.getString("department"));
+										a.setName(json.isNull("user") ? ""
+												: json.getString("user"));
+										a.setLook(json.isNull("read_count") ? ""
+												: json.getString("read_count"));
+										//增加是否已读,置顶
+										a.setIsRead(json.optString("isRead"));
+										a.setIsTop(json.optString("isTop"));
+										list.add(a);
+									}
+									searchadapter.setdata(list);
+									searchadapter.notifyDataSetInvalidated();
+									mPullToRefreshView
+											.onHeaderRefreshComplete();
+									mPullToRefreshView
+											.onFooterRefreshComplete();
+								}
+							}
+
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+
+					public void onFailure(Throwable arg0, String tipInfo) {
+						super.onFailure(arg0, tipInfo);
+					}
+				});
+	}
+
+	// 加载更多
+	private void getMoreData() {
+		//加载之前判断是否最后一页
+		if(total == list.size()){
+			searchadapter.setdata(list);
+			searchadapter.notifyDataSetInvalidated();
+			mPullToRefreshView
+					.onHeaderRefreshComplete();
+			mPullToRefreshView
+					.onFooterRefreshComplete();
+			Toast.makeText(DynamicActivity.this, "已加载到最后一页",
+					Toast.LENGTH_SHORT).show();
+			return ;
+		}
+		pagecount++;
+		String tokenId = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+				DynamicActivity.this);
+		RequestParams param = new RequestParams();
+		param.put("token_id", tokenId);
+		param.put("pageNo", "" + pagecount);
+		HttpClient.post(DynamicActivity.this, ActionUrl.DYNAMIC_LIST, param,
+				new MyAsyncHttpResponseHandler(DynamicActivity.this, "请稍后...") {
+					public void onSuccess(String results) {
+						super.onSuccess(results);
+
+						try {
+							JSONObject jsonObject = new JSONObject(results);
+							if (jsonObject.has("msg")) {
+								String msg = jsonObject.isNull("msg") ? ""
+										: jsonObject.getString("msg");
+
+								if (msg.equals("查询成功")) {
+									if (list == null)
+										list = new ArrayList<NoticeBean>();
+//									JSONArray jo1 = jsonObject.getJSONArray("list");
+									String data = jsonObject.isNull("data") ? "": jsonObject.getString("data");
+									JSONObject jo1 = new JSONObject(data);
+									//更新记录总数
+									total = jo1.getInt("count");
+									JSONArray jos1 = jo1.getJSONArray("list");
+									for (int i = 0; i < jos1.length(); i++) {
+										JSONObject json = jos1.getJSONObject(i);
+										NoticeBean a = new NoticeBean();
+										a.setContent(json.isNull("content") ? ""
+												: json.getString("content"));
+										a.setId(json.isNull("id") ? "" : json
+												.getString("id"));
+										a.setTime(json.isNull("log_time") ? ""
+												: json.getString("log_time"));
+										a.setTitle(json.isNull("title") ? ""
+												: json.getString("title"));
+										a.setDepartment(json
+												.isNull("department") ? ""
+												: json.getString("department"));
+										a.setName(json.isNull("user") ? ""
+												: json.getString("user"));
+										a.setLook(json.isNull("read_count") ? ""
+												: json.getString("read_count"));
+										//增加是否已读,置顶
+										a.setIsRead(json.optString("isRead"));
+										a.setIsTop(json.optString("isTop"));
+										list.add(a);
+									}
+									searchadapter.setdata(list);
+									searchadapter.notifyDataSetInvalidated();
+									mPullToRefreshView
+											.onHeaderRefreshComplete();
+									mPullToRefreshView
+											.onFooterRefreshComplete();
+								}
+							}
+
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+
+					public void onFailure(Throwable arg0, String tipInfo) {
+						super.onFailure(arg0, tipInfo);
+					}
+				});
+	}
+
+	private void getdata() {
+		String tokenId = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+				DynamicActivity.this);
+		RequestParams param = new RequestParams();
+		param.put("token_id", tokenId);
+		param.put("pageNo", "" + pagecount);
+		HttpClient.post(DynamicActivity.this, ActionUrl.DYNAMIC_LIST, param,
+				new MyAsyncHttpResponseHandler(DynamicActivity.this, "请稍后...") {
+					public void onSuccess(String results) {
+						super.onSuccess(results);
+
+						try {
+							JSONObject jsonObject = new JSONObject(results);
+							if (jsonObject.has("msg")) {
+								String msg = jsonObject.isNull("msg") ? ""
+										: jsonObject.getString("msg");
+
+								if (msg.equals("查询成功")) {
+									if (list == null)
+										list = new ArrayList<NoticeBean>();
+//									JSONArray jo1 = jsonObject.getJSONArray("list");
+									String data = jsonObject.isNull("data") ? "": jsonObject.getString("data");
+									JSONObject jo1 = new JSONObject(data);
+									//获取记录总数
+									total = jo1.getInt("count");
+									JSONArray jos1 = jo1.getJSONArray("list");
+									
+									for (int i = 0; i < jos1.length(); i++) {
+										JSONObject json = jos1.getJSONObject(i);
+										NoticeBean a = new NoticeBean();
+										a.setContent(json.isNull("content") ? ""
+												: json.getString("content"));
+										a.setId(json.isNull("id") ? "" : json
+												.getString("id"));
+										a.setTime(json.isNull("log_time") ? ""
+												: json.getString("log_time"));
+										a.setTitle(json.isNull("title") ? ""
+												: json.getString("title"));
+										a.setDepartment(json
+												.isNull("department") ? ""
+												: json.getString("department"));
+										a.setName(json.isNull("user") ? ""
+												: json.getString("user"));
+										a.setLook(json.isNull("read_count") ? ""
+												: json.getString("read_count"));
+										//增加是否已读,置顶
+										a.setIsRead(json.optString("isRead"));
+										a.setIsTop(json.optString("isTop"));
+										list.add(a);
+									}
+									initListView();
+								}
+							}
+
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+
+					public void onFailure(Throwable arg0, String tipInfo) {
+						super.onFailure(arg0, tipInfo);
+					}
+				});
+	}
+
+	private void initListView() {
+		listview = (ListView) findViewById(R.id.search_list);
+		searchadapter = new SearchAdapter(this, list);
+		listview.setAdapter(searchadapter);
+		listview.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+									int position, long id) {
+
+				String Id = list.get(position).getId();
+				Intent intent = new Intent(DynamicActivity.this,
+						DynamicDetailActivity.class);
+				intent.putExtra("dynamic_id", Id);
+				// intent.putExtra("tokenId", tokenId);
+//				startActivity(intent);
+				startActivityForResult(intent, position);
+			}
+		});
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		//更新集合数据
+		list.get(requestCode).setIsRead("1");
+		//刷新页面
+		searchadapter.notifyDataSetChanged();
+	}
+}

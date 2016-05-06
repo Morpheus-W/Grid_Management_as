@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center|left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/upload_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/ten_dip"
+            android:text="aljhfilahgkljehrkgheqrkghf"
+            android:textColor="@color/balck"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/upload_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ten_dip"
+            android:layout_marginTop="@dimen/five_dip"
+            android:text="aljhfilahgkljehrkgheqrkghf"
+            android:textColor="@color/mark_text"
+            android:textSize="@dimen/mark_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/upload_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten_dip"
+            android:background="@drawable/btn_submit"
+            android:text="上传"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/carpool/projects/Grid_Management_as/app/src/main/res/layout/upload_adapter.xml -->

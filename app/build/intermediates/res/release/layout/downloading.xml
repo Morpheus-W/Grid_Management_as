@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/dialog_star_bg">
+
+        <LinearLayout
+            android:id="@+id/main_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/twenty_dip">
+
+            <ImageView
+
+                android:id="@+id/downloading"
+                android:layout_width="@dimen/forty"
+                android:layout_height="@dimen/forty"
+                android:background="@drawable/loading_blue"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/downloading_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/ten_dip"
+                android:text="加载中..."
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:layout_below="@id/main_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:background="@color/pastel_1"
+                android:id="@+id/back_down"
+                android:text="后台下载"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/downloading.xml -->

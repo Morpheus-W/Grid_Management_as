@@ -1,0 +1,241 @@
+package com.cn7782.management.config;
+
+import android.content.Context;
+import com.cn7782.management.android.constants.PreferenceConstant;
+import com.cn7782.management.util.SharedPreferenceUtil;
+
+public class ActionUrl {
+	public static String IP = "218.76.156.133";
+	public static String PORT = "8088";
+	// 生产地址 203.195.198.39 8.8.21.51 218.76.156.133
+	public static String URL = "http://"+IP+":"+PORT+"/";
+	// 登陆URL
+	public static String LOGIN_URL = URL + "city_grid/a/mobile/login";
+	// 主界面气泡
+	public static String NUMBER = URL + "city_grid/mobile/announcement/noLook";
+	// 消息气泡
+	public static String MSG_NUMBER = URL + "city_grid/mobile/message/getNotRead";
+	// 社会治安
+	public static String PUPLIC_SECURITY = URL
+			+ "city_grid/mobile/eventReport/social";
+	// 矛盾纠纷
+	public static String DISPUTE = URL + "city_grid/mobile/eventReport/contrad";
+	// 护路护线
+	public static String PROTECT = URL + "city_grid/mobile/eventReport/road";
+	// 公告列表查询
+	public static String NOTICE = URL
+			+ "city_grid/mobile/announcement/announcementList";
+	// 公告详细查询
+	public static String NOTICE_DETAIL = URL
+			+ "city_grid/mobile/announcement/announcementOne";
+	// 提交公告评论
+	public static String SUBMIT_COMMENT = URL
+			+ "city_grid/mobile/announcement/comments";
+	// 查看公告评论
+	public static String NOTICE_COMMENT_LIST = URL
+			+ "city_grid/mobile/announcement/findComments";
+	// 查看公告已阅
+	public static String HAVE_READ = URL
+			+ "city_grid/mobile/announcement/findRead";
+
+	// 查看综合动态列表
+	public static String DYNAMIC_LIST = URL
+			+ "city_grid/mobile/information/informationList";
+	// 查看消息态列表
+	public static String MESSAGE_LIST = URL
+			+ "city_grid/mobile/message/messageList";
+
+	// 动态详情接口
+	public static String DYNAMIC_DETAIL = URL
+			+ "city_grid/mobile/information/informationOne";
+	// 消息详情
+	public static String MESSAGE_DETAIL = URL
+			+ "city_grid/mobile/message/messageDetail";
+
+	// 动态详情已阅
+	public static String DYNAMIC_READ = URL
+			+ "city_grid/mobile/information/findInformationRead";
+
+	// 上传轨迹
+	public static String TRAFECTORY = URL + "city_grid/mobile/way/intoWay";
+
+	// 按上报事件分类
+	public static String STATISTICAL = URL
+			+ "city_grid/mobile/statistical/reportType";
+
+	// 查询我的上报
+	public static String MYREPORT = URL
+			+ "city_grid/mobile/eventReport/myEvent";
+
+	// 查询事件处理详情
+	public static String MYREPORT_DETAIL = URL
+			+ "city_grid/mobile/eventReport/eventDetails";
+
+	// 修改密码
+	public static String CHANGE_PASSWORD = URL
+			+ "city_grid/mobile/mobileUser/modifyPwd";
+
+	// 上报总统计
+	public static String ZONGEVENT_REPORY = URL
+			+ "city_grid/mobile/statistical/zongEventReport";
+
+	// 巡防总统计
+	public static String ZONGWAY = URL + "city_grid/mobile/statistical/zongWay";
+
+	// 上报饼图统计
+	public static String EVENTREPORT = URL
+			+ "city_grid/mobile/statistical/eventReport";
+
+	// 巡防饼图统计
+	public static String WAYREPORT = URL
+			+ "city_grid/mobile/statistical/wayReport";
+
+	// 定时发送位置
+	public static String PRIVATE = URL + "city_grid/mobile/way/oneLocation";
+
+	// 轨迹保存
+	public static String UPLOAD = URL + "city_grid/mobile/way/intoWay";
+
+	// 我的巡防
+	public static String MYPATROL = URL + "city_grid/mobile/way/myWay";
+
+	// 巡防详情
+	public static String PATROLDETAIL = URL + "city_grid/mobile/way/detailsWay";
+
+	// 手机提交公告
+	public static String SENDNOTICE = URL + "city_grid/mobile/way/inspection";
+
+	// 轨迹人口列表
+	public static String HITTORY = URL + "city_grid/mobile/way/trajectoryPoint";
+
+	// 轨迹历史列表
+	public static String TRAJECTORY_HITTORY = URL
+			+ "city_grid/mobile/way/historyWayList";
+
+	// 轨迹历史具体轨迹
+	public static String HITTORY_DETAIL = URL
+			+ "city_grid/mobile/way/historyWay";
+
+	// 个人信息
+	public static String INFO = URL + "city_grid/mobile/mobileUser/userData";
+
+	// 分区
+	public static String GRID = URL + "city_grid/mobile/way/findGrid";
+
+	// 上传头像
+	public static String UPDATEPHOTO = URL
+			+ "city_grid/mobile/mobileUser/updatePhoto";
+
+	// 修改个人信息
+	public static String CHANGEINFO = URL
+			+ "city_grid/mobile/mobileUser/updateUser";
+
+	// 提交意见反馈
+	public static String FEEDBACK = URL + "city_grid/mobile/mobileUser/advice";
+	
+	// 人身安全
+	public static String SOS = URL + "city_grid/mobile/eventReport/sos";
+	
+	//通讯录 部门信息
+	public static String DEPARTMENT = URL + "city_grid/mobile/phonebook/treeData";
+	
+	//通讯录 员工信息
+	public static String EMPLOYEE = URL + "city_grid/mobile/phonebook/phonebookAll";
+	
+	//查询日程
+	public static String SCHEDULE = URL + "city_grid/mobile/calendar/calendar";
+	//查询日程详情
+	public static String SCHEDULEDETAIL = URL + "city_grid/mobile/calendar/calendarOne";
+	//更新日程
+	public static String SCHEDULEUPDATE = URL + "city_grid/mobile/calendar/saveContrad";
+	//删除日程
+	public static String SCHEDULEDELETE = URL + "city_grid/mobile/calendar/deleteContrad";
+	
+    public static  String UPDATE_SERVER = URL + "city_grid/mobile/apk/lastVersion";
+    public static  String UPDATE_SERVER2 = URL + "city_grid";
+	
+
+	public static void changeIP(Context context) {
+		String ip = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, "ip", context);
+		String port = SharedPreferenceUtil.getValue(
+				PreferenceConstant.MARK_ID_TABLE, "port", context);
+		if (ip == null) {
+			ip = "";
+		}
+		if (port == null) {
+			port = "";
+		}
+		if (ip.equals("")) {
+			ip = IP;
+		}
+		if (port.equals("")) {
+			port = PORT;
+		}
+		URL = "http://" + ip + ":" + port + "/";
+		SharedPreferenceUtil.modify(PreferenceConstant.MARK_ID_TABLE, "ip",ip,context);
+		SharedPreferenceUtil.modify(PreferenceConstant.MARK_ID_TABLE, "port",port,context);
+
+		change();
+	}
+
+	/**
+	 * 
+	 * 更变地址
+	 */
+	public static void change() {
+		LOGIN_URL = URL + "city_grid/a/mobile/login";
+		NUMBER = URL + "city_grid/mobile/announcement/noLook";
+		MSG_NUMBER = URL + "city_grid/mobile/message/getNotRead";
+		PUPLIC_SECURITY = URL + "city_grid/mobile/eventReport/social";
+		DISPUTE = URL + "city_grid/mobile/eventReport/contrad";
+		PROTECT = URL + "city_grid/mobile/eventReport/road";
+		NOTICE = URL + "city_grid/mobile/announcement/announcementList";
+		TRAFECTORY = URL + "city_grid/mobile/way/intoWay";
+		NOTICE_DETAIL = URL + "city_grid/mobile/announcement/announcementOne";
+		NOTICE_COMMENT_LIST = URL
+				+ "city_grid/mobile/announcement/findComments";
+		SUBMIT_COMMENT = URL + "city_grid/mobile/announcement/comments";
+		HAVE_READ = URL + "city_grid/mobile/announcement/findRead";
+		STATISTICAL = URL + "city_grid/mobile/statistical/reportType";
+		MYREPORT = URL + "city_grid/mobile/eventReport/myEvent";
+		MYREPORT_DETAIL = URL + "city_grid/mobile/eventReport/eventDetails";
+		CHANGE_PASSWORD = URL + "city_grid/mobile/mobileUser/modifyPwd";
+		ZONGEVENT_REPORY = URL + "city_grid/mobile/statistical/zongEventReport";
+		ZONGWAY = URL + "city_grid/mobile/statistical/zongWay";
+		EVENTREPORT = URL + "city_grid/mobile/statistical/eventReport";
+		PRIVATE = URL + "city_grid/mobile/way/oneLocation";
+		UPLOAD = URL + "city_grid/mobile/way/intoWay";
+		MYPATROL = URL + "city_grid/mobile/way/myWay";
+		PATROLDETAIL = URL + "city_grid/mobile/way/detailsWay";
+		SENDNOTICE = URL + "city_grid/mobile/announcement/inAnnouncement";
+		HITTORY = URL + "city_grid/mobile/way/trajectoryPoint";
+		WAYREPORT = URL + "city_grid/mobile/statistical/wayReport";
+		INFO = URL + "city_grid/mobile/mobileUser/userData";
+		GRID = URL + "city_grid/mobile/way/findGrid";
+		TRAJECTORY_HITTORY = URL + "city_grid/mobile/way/historyWayList";
+		HITTORY_DETAIL = URL + "city_grid/mobile/way/historyWay";
+		UPDATEPHOTO = URL + "city_grid/mobile/mobileUser/updatePhoto";
+		CHANGEINFO = URL + "city_grid/mobile/mobileUser/updateUser";
+		
+		DYNAMIC_LIST = URL + "city_grid/mobile/information/informationList";
+		MESSAGE_LIST = URL + "city_grid/mobile/message/messageList";
+		DYNAMIC_DETAIL = URL + "city_grid/mobile/information/informationOne";
+		MESSAGE_DETAIL = URL + "city_grid/mobile/message/messageDetail";
+		DYNAMIC_READ = URL
+				+ "city_grid/mobile/information/findInformationRead";
+		
+		FEEDBACK = URL + "city_grid/mobile/mobileUser/advice";
+		
+		SOS = URL + "city_grid/mobile/eventReport/sos";
+		DEPARTMENT = URL + "city_grid/mobile/phonebook/treeData";
+		EMPLOYEE = URL + "city_grid/mobile/phonebook/phonebookAll";
+		SCHEDULE = URL + "city_grid/mobile/calendar/calendar";
+		SCHEDULEDETAIL = URL + "city_grid/mobile/calendar/calendarOne";
+		SCHEDULEUPDATE = URL + "city_grid/mobile/calendar/saveContrad";
+		SCHEDULEDELETE = URL + "city_grid/mobile/calendar/deleteContrad";
+		
+		UPDATE_SERVER = URL + "city_grid/mobile/apk/lastVersion";
+	    UPDATE_SERVER2 = URL + "city_grid";
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="50dip"
+    android:layout_height="50dip" >
+
+    <ImageView
+        android:id="@+id/kcool_addphoto_photo"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/kcool_addphoto_remover"
+        android:layout_width="25dip"
+        android:layout_height="25dip"
+        android:layout_gravity="top|right"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image_remover"
+        tools:ignore="ContentDescription" />
+
+</FrameLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/addphoto_layout_view.xml -->

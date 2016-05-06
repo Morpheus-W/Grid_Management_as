@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/add_1" android:state_pressed="true"/>
+    <item android:drawable="@drawable/add" android:state_pressed="false"/>
+
+</selector><!-- From: file:/E:/carpool/projects/Grid_Management_as/app/src/main/res/drawable/btn_add.xml -->

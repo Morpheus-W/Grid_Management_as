@@ -1,0 +1,94 @@
+# ---------- 混淆配置start --------------------------------
+
+# 设置混淆的压缩比率 0 ~ 7
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+# 混淆采用的算法
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+
+-keepattributes *Annotation*
+# 这行一定要加上，否则你的object中含有其他对象的字段的时候会抛出ClassCastException
+-keepattributes Signature
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.support.v4.app.FragmentActivity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+
+# 声明用到的jar包
+#gradle配置文件中已声明
+
+#第三方类库
+-dontwarn android.**
+-keep class android.**  {*;}
+
+-dontwarn com.loopj.android.http.**
+-keep class com.loopj.android.http.**  {*;}
+
+-dontwarn com.baidu.**
+-keep class com.baidu.**  {*;}
+
+-dontwarn com.nineoldandroids.**
+-keep class com.nineoldandroids.**  {*;}
+
+-dontwarn com.slidingmenu.lib.**
+-keep class com.slidingmenu.lib.**  {*;}
+
+-dontwarn com.umeng.analytics.**
+-keep class com.umeng.analytics.**  {*;}
+
+-dontwarn com.nostra13.universalimageloader.**
+-keep class com.nostra13.universalimageloader.**  {*;}
+
+-dontwarn com.facebook.rebound.**
+-keep class com.facebook.rebound.** {*;}
+-dontwarn com.zcw.togglebutton.**
+-keep class com.zcw.togglebutton.** {*;}
+
+-dontwarn com.squareup.picasso.**
+-keep class com.squareup.picasso.** {*;}
+
+-dontwarn  com.easemob.**
+-keep class com.easemob.** {*;}
+-keep class org.jivesoftware.** {*;}
+
+-dontwarn  org.apache.**
+-keep class org.apache.** {*;}
+
+-dontwarn  com.google.android.gms.**
+-keep class com.google.android.gms.** {*;}
+#jpush
+-dontwarn  cn.jpush.**
+-keep class cn.jpush.** {*;}
+-dontwarn  com.google.gson.jpush.**
+-keep class com.google.gson.jpush.** {*;}
+-dontwarn  com.google.protobuf.jpush.**
+-keep class com.google.protobuf.jpush.** {*;}
+
+
+#2.0.9后加入语音通话功能，如需使用此功能的api，加入以下keep
+-dontwarn ch.imvs.**
+-keep class ch.imvs.** {*;}
+-dontwarn org.slf4j.**
+-keep class org.slf4j.** {*;}
+-dontwarn org.ice4j.**
+-keep class org.ice4j.** {*;}
+-dontwarn net.java.sip.**
+-keep class net.java.sip.** {*;}
+-dontwarn org.webrtc.voiceengine.**
+-keep class org.webrtc.voiceengine.** {*;}
+-dontwarn org.bitlet.**
+-keep class org.bitlet.** {*;}
+
+
+#保留所有具有公有访问权限的类和其公共成员
+-keepclasseswithmembers class *{
+    public *;
+}

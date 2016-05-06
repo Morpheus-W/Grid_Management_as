@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/dialog_star_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/twenty_dip" >
+
+        <ImageView
+            android:id="@+id/downloading"
+            android:layout_width="@dimen/forty"
+            android:layout_height="@dimen/forty"
+            android:background="@drawable/loading_blue"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/downloading_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/ten_dip"
+            android:text="加载中..."
+            android:textColor="#333333" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/android%20baidu%20SDK%203.0.3/Grid_Management_as/app/src/main/res/layout/downloading.xml -->

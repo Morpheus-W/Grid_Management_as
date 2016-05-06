@@ -1,0 +1,280 @@
+package com.cn7782.management.android.activity.service;
+
+import android.app.KeyguardManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Looper;
+import android.os.PowerManager;
+import android.os.Vibrator;
+
+import com.cn7782.management.R;
+import com.cn7782.management.android.activity.MainActivity;
+import com.cn7782.management.android.activity.MessageActivity;
+import com.cn7782.management.android.activity.MsgNotificationActivity;
+import com.cn7782.management.android.activity.bean.MessageBean;
+import com.cn7782.management.android.activity.controller.SoundManager;
+import com.cn7782.management.android.activity.dialog.MsgDialog;
+import com.cn7782.management.android.constants.GlobalConstant;
+import com.cn7782.management.android.constants.PreferenceConstant;
+import com.cn7782.management.util.SharedPreferenceUtil;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MessengerService extends Service {
+
+    /**
+     * 消息列表
+     */
+    public static final int MSG_LIST = 2;
+
+    private List<MessageBean> list = null;
+    private int timing = 10000;
+    private Timer timer;
+    private NotificationManager nm;
+
+    private SoundManager mSoundManager;
+    private Vibrator vibrator;
+    // 停止 开启 停止 开启
+    private static long[] pattern = {100, 400, 100, 400};
+
+    public static boolean mBound = false;
+    private static boolean isSent = true;
+    //声明键盘管理器
+    KeyguardManager mKeyguardManager = null;
+    //声明电源管理器
+    private PowerManager pm;
+    private Context context;
+    private String tokenId,URL ;
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        tokenId = SharedPreferenceUtil.getValue(
+                PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.MARK_ID,
+                context);
+        String ip = SharedPreferenceUtil.getValue(
+                PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.IP,
+                context);
+        String port = SharedPreferenceUtil.getValue(
+                PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.PORT,
+                context);
+        URL = "http://"+ip+":"+port+"/"+PreferenceConstant.NOT_READ;
+
+        //初始化通知管理器
+        nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        //初始化声音
+        AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mSoundManager = new SoundManager();
+        mSoundManager.initSounds(getApplicationContext());
+        mSoundManager.addSound(1, R.raw.msg);
+        //初始化震动
+         /*
+         * 想设置震动大小可以通过改变pattern来设定，如果开启时间太短，震动效果可能感觉不到
+         * */
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        //获取电源的服务
+        pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        //获取系统服务
+        mKeyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+        requestMsg();
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        //该方法每次开启服务都会执行
+//        requestMsg();
+        //START_STICKY 该返回值，若服务意外终止，系统会尝试重新创建
+
+        Notification notification = new Notification(R.drawable.ic_launcher,
+                getString(R.string.app_name), System.currentTimeMillis());
+        PendingIntent pendingintent = PendingIntent.getActivity(this, 0,
+                new Intent(this, MainActivity.class), 0);
+        notification.setLatestEventInfo(this, "宜章网格化系统", "调度消息",
+                pendingintent);
+        startForeground(0x111, notification);
+        flags = START_STICKY;
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    public void requestMsg() {
+
+        mBound = true;
+        if (timer == null)
+            timer = new Timer();
+        TimerTask task = new TimerTask() {
+            public void run() {
+                getData();
+            }
+        };
+        timer.schedule(task, 10, timing);
+    }
+
+    /**
+     * 当Activity绑定Service的时候，通过这个方法返回一个IBinder，Activity用这个IBinder创建出的Messenger，就可以与Service的Handler进行通信了
+     */
+    @Override
+    public IBinder onBind(Intent intent) {
+        mBound = true;
+        return mBind;
+    }
+
+    private MsgBind mBind = new MsgBind();
+
+    public class MsgBind extends Binder {
+        public MessengerService getService() {
+            return MessengerService.this;
+        }
+    }
+
+    public void getData() {
+        final String msgSound = SharedPreferenceUtil.getValue(
+                PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.IS_MSG_SOUND,
+                getApplicationContext());
+        final String msgVibrator = SharedPreferenceUtil.getValue(
+                PreferenceConstant.MARK_ID_TABLE, PreferenceConstant.IS_MSG_VIBRATOR,
+                getApplicationContext());
+        RequestParams param = new RequestParams();
+        param.put("token_id", tokenId);
+        param.put("pageNo", "1");
+        AsyncHttpClient httpClient = new AsyncHttpClient();
+        httpClient.post(URL, param,
+                new JsonHttpResponseHandler() {
+                    public void onSuccess(int statusCode, JSONObject response) {
+                        super.onSuccess(statusCode, response);
+                        try {
+                            if (response.has("msg")) {
+                                String msg = response.isNull("msg") ? ""
+                                        : response.getString("msg");
+
+                                if (msg.equals("请求成功")) {
+                                    int num = response.isNull("num") ? 0
+                                            : response.getInt("num");
+                                    if (num > 0) {
+                                        String lastTime = response.isNull("lastTime") ? ""
+                                                : response.getString("lastTime");
+
+                                        String lastContent = response.isNull("lastContent") ? ""
+                                                : response.getString("lastContent");
+                                        String lastId = response.isNull("lastId") ? ""
+                                                : response.getString("lastId");
+                                        Bundle bundle = new Bundle();
+                                        bundle.putInt("num",num);
+                                        bundle.putString("lastTime", lastTime);
+                                        bundle.putString("lastContent",lastContent);
+                                        bundle.putString("lastId",lastId);
+                                        if (msgSound == null || (msgSound != null && msgSound.equals("true"))) {
+                                            //接收到消息声音提示
+                                            mSoundManager.playSound(1);
+                                        }
+                                        if (vibrator.hasVibrator()) {
+                                            if (msgVibrator == null || (msgVibrator != null && msgVibrator.equals("true"))) {
+                                                //重复两次上面的pattern 如果只想震动一次，index设为-1
+                                                vibrator.vibrate(pattern, -1);
+                                            }
+                                        }
+                                        showMsgDialog(bundle);
+//                                        showMsgNotification(num);
+                                        showMsgWakeLock(bundle);
+//                                        isSent = false;
+                                    }
+//                                    else {
+                                        //取消之前通知后再发
+//                                        nm.cancel(GlobalConstant.FALL_DOWN_NOTIFICATION_ID);
+//                                        isSent = true;
+//                                    }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable arg0, String arg1) {
+                        super.onFailure(arg0, arg1);
+                    }
+                });
+    }
+
+    /*展示消息通知*/
+    private void showMsgNotification(int num) {
+        String title = "消息提醒";
+        String content = "您有" + num + "条未读消息！";
+        //取消之前通知后再发
+        nm.cancel(GlobalConstant.FALL_DOWN_NOTIFICATION_ID);
+        Notification n = new Notification();
+        n.icon = R.drawable.ic_launcher;
+        n.tickerText = content;
+        n.when = System.currentTimeMillis();
+        //用户点击后消失
+        n.flags = Notification.FLAG_AUTO_CANCEL;
+        Intent intent = new Intent(context, MessageActivity.class);
+        //该标志位表示如果Intent要启动的Activity在栈顶，则无须创建新的实例
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent pi = PendingIntent.getActivity(context, 0, intent, 0);
+        n.setLatestEventInfo(context, title, content, pi);
+        nm.notify(GlobalConstant.FALL_DOWN_NOTIFICATION_ID, n);
+    }
+
+    /*展示消息对话框*/
+    private void showMsgDialog(final Bundle bundle) {
+        KeyguardManager mKeyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+        boolean flag = mKeyguardManager.inKeyguardRestrictedInputMode();
+
+        //判断是否在锁屏状态下
+        if (!flag) {
+
+            Handler handler = new Handler(Looper.getMainLooper());
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    MsgDialog msgDialog = new MsgDialog(getApplicationContext(), R.style.msgDialog, bundle);
+                    msgDialog.show();
+                }
+            });
+        }
+    }
+
+    private void showMsgWakeLock(Bundle bundle) {
+        KeyguardManager mKeyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+        boolean flag = mKeyguardManager.inKeyguardRestrictedInputMode();
+
+        //判断是否在锁屏状态下
+        if (flag) {
+
+            Intent intent = new Intent(context, MsgNotificationActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("data", bundle);
+            context.startActivity(intent);
+        }
+    }
+
+    public void onDestroy() {
+        mBound = false;
+        if (timer != null) {
+            timer.cancel();
+        }
+        stopForeground(true);
+        //当用户主动销毁服务时，再次启动
+        Intent intent = new Intent("com.cn7782.management.messengerservice.destroy");
+        sendBroadcast(intent);
+    }
+
+}

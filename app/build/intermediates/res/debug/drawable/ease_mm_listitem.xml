@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ease_mm_listitem_pressed" android:state_pressed="true"/>
+    <item android:drawable="@drawable/ease_mm_listitem_simple"/>
+
+</selector><!-- From: file:/E:/carpool/projects/Grid_Management_as/easeUI/src/main/res/drawable/ease_mm_listitem.xml --><!-- From: file:/E:/carpool/projects/Grid_Management_as/app/build/intermediates/exploded-aar/Grid_Management_as/easeUI/unspecified/res/drawable/ease_mm_listitem.xml -->

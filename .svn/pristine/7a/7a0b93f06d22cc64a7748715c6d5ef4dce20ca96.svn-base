@@ -1,0 +1,189 @@
+package com.cn7782.management.view;
+
+import com.cn7782.management.R;
+import com.cn7782.management.android.activity.ChangeInformationActivity;
+import com.cn7782.management.android.activity.ChangeMessageActivity;
+import com.cn7782.management.android.activity.FallDownWarnActivity;
+import com.cn7782.management.android.activity.FeedbackActivity;
+import com.cn7782.management.android.activity.LoginActivity;
+import com.cn7782.management.android.activity.MyInformationActivity;
+import com.cn7782.management.android.activity.controller.ShakeListener;
+import com.cn7782.management.android.activity.controller.SoundManager;
+import com.cn7782.management.android.activity.controller.ShakeListener.OnShakeListener;
+import com.cn7782.management.android.activity.service.CoreService;
+import com.cn7782.management.android.constants.GlobalConstant;
+import com.cn7782.management.util.PictureUtil;
+import com.cn7782.management.view.ToggleButton.OnToggleChanged;
+import com.slidingmenu.lib.SlidingMenu;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class SlidingListView extends View implements OnClickListener {
+	private View slidinglistview;
+	private Context mContext;
+	private ImageView image;
+	private SlidingMenu mOwner;
+	private String name, address;
+	
+	private SoundManager mSoundManager;
+
+	public SlidingListView(Context context) {
+		super(context);
+		mContext = context;
+		slidinglistview = LayoutInflater.from(mContext).inflate(
+				R.layout.fragment_more, null);
+		initViews(slidinglistview);
+	}
+
+	public void setdata(String mname, String maddress, String userPhoto) {
+		this.name = mname;
+		this.address = maddress;
+		((TextView) slidinglistview.findViewById(R.id.user_name))
+				.setText(getname());
+		((TextView) slidinglistview.findViewById(R.id.city))
+				.setText(getaddress());
+		ImageView point_head = (ImageView) slidinglistview
+				.findViewById(R.id.point_head);
+		PictureUtil.ShowPicture(point_head, mContext, userPhoto);
+	}
+
+	private String getname() {
+		return name;
+	}
+
+	private String getaddress() {
+		return address;
+	}
+
+	private void initViews(View v) {
+
+		v.findViewById(R.id.personal_data_layout).setOnClickListener(this);
+		v.findViewById(R.id.modify_password_layout).setOnClickListener(this);
+		v.findViewById(R.id.message_center_layout).setOnClickListener(this);
+		v.findViewById(R.id.exit_login_layout).setOnClickListener(this);
+		v.findViewById(R.id.Feedback_layout).setOnClickListener(this);
+		//摇一摇声音
+		mSoundManager = new SoundManager();
+		mSoundManager.initSounds(mContext);
+		mSoundManager.addSound(1, R.raw.ring);
+		
+		//开启摇一摇告警
+		ToggleButton shake = (ToggleButton) v.findViewById(R.id.shake_toggle);
+		shake.setOnToggleChanged(new OnToggleChanged() {
+			
+			@Override
+			public void onToggle(boolean on) {
+				//利用单例保证开启和注销的是同一个对象的传感器
+				ShakeListener mShakeListener = ShakeListener.getInstance(mContext);
+				mShakeListener.setOnShakeListener(new Shake());
+				if(on){
+					mShakeListener.start();
+				}else{
+					mShakeListener.stop();
+				}
+			}
+		});
+		//开启摔落告警
+		ToggleButton falldown = (ToggleButton) v.findViewById(R.id.falldown_toggle);
+		falldown.setOnToggleChanged(new OnToggleChanged() {
+			
+			@Override
+			public void onToggle(boolean on) {
+				Intent coreIntent = new Intent(mContext, CoreService.class);
+				coreIntent.putExtra("serviceName", "falldown");
+				if(on){
+					mContext.startService(coreIntent);
+				}else{
+					mContext.stopService(coreIntent);
+				}
+			}
+		});
+		String name = "";
+		try {
+			name = getVersionName();
+		} catch (Exception e) {		
+			// TODO 获取版本异常
+			e.printStackTrace();
+		}
+		((TextView) v.findViewById(R.id.package_name)).setText("当前版本 " + name);
+	}
+
+	public void setOwner(SlidingMenu Owner) {
+		mOwner = Owner;
+	}
+
+	public View getView() {
+		return slidinglistview;
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO 侧滑选项 
+		switch (v.getId()) {
+		case R.id.personal_data_layout:
+			Intent intent = new Intent(mContext, MyInformationActivity.class);
+			mContext.startActivity(intent);
+			break;
+		case R.id.modify_password_layout:
+			Intent intent2 = new Intent(mContext,
+					ChangeInformationActivity.class);
+			mContext.startActivity(intent2);
+			break;
+		case R.id.message_center_layout:
+			Intent intent3 = new Intent(mContext, ChangeMessageActivity.class);
+			mContext.startActivity(intent3);
+			break;
+		case R.id.Feedback_layout:
+			Intent intent4 = new Intent(mContext, FeedbackActivity.class);
+			mContext.startActivity(intent4);
+			break;
+		case R.id.exit_login_layout:
+			Intent intent5 = new Intent(mContext, LoginActivity.class);
+			intent5.putExtra("isNeedBack", "true");
+			mContext.startActivity(intent5);
+			((Activity) mContext).finish();
+			break;
+		default:
+			break;
+		}
+	}
+
+	private String getVersionName() throws Exception {
+		// 获取packagemanager的实例
+		PackageManager packageManager = mContext.getPackageManager();
+		// getPackageName()是你当前类的包名，0代表是获取版本信息
+		PackageInfo packInfo = packageManager.getPackageInfo(
+				mContext.getPackageName(), 0);
+		String version = packInfo.versionName;
+		return version;
+	}
+	
+	class Shake implements OnShakeListener
+	{
+
+		@Override
+		public void onShake()
+		{
+			mSoundManager.playSound(1);
+//			Toast.makeText(mContext, "启动了摇一摇", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(
+					mContext.getApplicationContext(),
+					FallDownWarnActivity.class);
+			intent.putExtra("COUNT",
+					GlobalConstant.FALLDOWN_COUNT);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			mContext.startActivity(intent);
+		}
+
+	}
+}

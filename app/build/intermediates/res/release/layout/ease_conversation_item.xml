@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       />
+ <!-- android:text="@string/conversation" --> 
+</LinearLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/easeUI/src/main/res/layout/ease_conversation_item.xml --><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/build/intermediates/exploded-aar/Grid_Management_as/easeUI/unspecified/res/layout/ease_conversation_item.xml -->

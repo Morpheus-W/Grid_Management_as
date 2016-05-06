@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/title_color" >
+
+        <TextView
+            android:id="@+id/search_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/five_dip"
+            android:background="@drawable/btn_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/statistics"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/btnChangeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/ten_dip"
+            android:src="@drawable/startdate" />
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:layout_toRightOf="@+id/btnChangeDate"
+            android:text="2015-02-3"
+            android:textSize="@dimen/content_size" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/ten_dip"
+            android:src="@drawable/enddate" />
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:layout_toRightOf="@+id/image"
+            android:text="2015-02-3"
+            android:textSize="@dimen/content_size" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/same_day"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/same_day"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/last_week"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/last_week"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/one_week"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/one_week"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/last_month"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/last_month"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/one_month"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/one_month"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nearly_march"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/nearly_march"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/last_quarter"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/last_quarter"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/first_half_year"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/first_half_year"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/one_year"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="@dimen/ten_dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_submit"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dip"
+                    android:gravity="center"
+                    android:text="@string/one_year"
+                    android:textColor="@color/working"
+                    android:textSize="@dimen/login_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="@dimen/twenty_dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center|bottom" >
+
+        <Button
+            android:id="@+id/sumbit_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteen_dip"
+            android:layout_weight="1"
+            android:background="@color/title_color"
+            android:text="开始统计"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/SmartCity/client/Grid_Management_as/app/src/main/res/layout/activity_choose_date.xml -->
